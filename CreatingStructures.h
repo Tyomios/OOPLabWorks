@@ -1,29 +1,31 @@
 #pragma once
 #ifndef _H_CREATINGSTRUCTURES_B0968
 #define _H_CREATINGSTRUCTURES_B0968
+#include <string>
+
 
 struct Rectangle
 {
 	double Length;
 	double Weight;
-	char Color[];
+	std::string Color;
 };
 
 
 struct Flight
 {
-	char StartPoint[100];
-	char EndPoint[100];
+	std::string StartPoint;
+	std::string EndPoint;
 	int TimeOfFlightMinutes;
 };
 
 
 struct Film
 {
-	char Name[30];
+	std::string Name;
 	int TimeInMinutes;
 	int Year;
-	char Style[15];
+	std::string Style;
 	double Rating;
 };
 
@@ -38,7 +40,7 @@ struct Time
 
 struct Contact
 {
-	char Name[30];
+	std::string Name;
 	int Number;
 	bool IsFavorite;
 };
@@ -46,7 +48,7 @@ struct Contact
 
 struct Song
 {
-	char Name[20];
+	std::string Name;
 	int CountingInSeconds;
 	bool IsFavorite;
 };
@@ -54,8 +56,29 @@ struct Song
 
 struct Subject
 {
-	char Name[20];
+	std::string Name;
 	int Mark;
 	bool IsCertified;
 };
+
+
+void DemoRectangle();
+
+
+void DemoFlight();
+
+
+void DemoFilm();
+
+
+void DemoTime();
+
+
+void DemoContact();
+
+
+void DemoSong();
+
+
+void DemoSubject();
 #endif
