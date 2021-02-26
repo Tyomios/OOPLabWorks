@@ -38,7 +38,7 @@ void DemoSort()
 	}
 	catch (const std::exception &ex)
 	{
-		std::cout << ex.what() << std::endl;
+		std::cout << "Exception catched" << std::endl;
 	}
 	
 }

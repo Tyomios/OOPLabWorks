@@ -7,10 +7,9 @@ void ExceprionMenu()
 
 	while (true)
 	{
-		std::cout << "1 - 1.1 ()\n"
-			<< "2 - 2.2(count values in float array, more than user's value)\n"
-			<< "3 - 2.3(char array with alphabet chars)\n"
-			<< "0 <- back" << std::endl;
+		std::cout	<< "1 - 1.1 (exception practice)\n"
+					<< "2 - 2.2(try/catch practice)\n"
+					<< "0 <- back" << std::endl;
 
 		userChoose = GetIntValue();
 		switch (userChoose)
@@ -24,14 +23,8 @@ void ExceprionMenu()
 			}
 			case 2:
 			{
-			
-				system("pause");
-				break;
-			}
-			case 3:
-			{
-			
-
+				DemoSort();
+					
 				system("pause");
 				break;
 			}
@@ -44,6 +37,54 @@ void ExceprionMenu()
 			{
 				std::cout << "Unknown command" << std::endl;
 			}
+		}
+		system("cls");
+	}
+}
+
+void CreatingStructureMenu()
+{
+	int userChoose;
+
+	while (true)
+	{
+		std::cout << "1 - 1.1 (creating structures)\n"
+			<< "2 - 2.2(creating own structures)\n"
+			<< "0 <- back" << std::endl;
+
+		userChoose = GetIntValue();
+		switch (userChoose)
+		{
+		case 1:
+		{
+			Rectangle rectangle;
+			Flight flight;
+			Film move;
+			Time time;
+
+			std::cout << "All works good" << std::endl;
+			system("pause");
+			break;
+		}
+		case 2:
+		{
+			Contact phone;
+			Song song;
+			Subject math;
+			std::cout << "All works good" << std::endl;
+				
+			system("pause");
+			break;
+		}
+		case 0:
+		{
+			system("cls");
+			return;
+		}
+		default:
+		{
+			std::cout << "Unknown command" << std::endl;
+		}
 		}
 		system("cls");
 	}
