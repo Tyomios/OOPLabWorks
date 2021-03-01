@@ -2,20 +2,21 @@
 
 #include <iostream>
 
-void DemoContact(int size)
+Contact* DemoContact(int size)
 {
 	switch (size)
 	{
 	case 1:
 	{
-		Contact phone;
-		phone.IsFavorite = true;
-		phone.Name = "Honne";
-		phone.Number = 07321;
+		Contact* phone = new Contact;
+		phone->IsFavorite = true;
+		phone->Name = "Honne";
+		phone->Number = 07321;
+		return phone;
 	}
 	case 3:
 	{
-		Contact phone[3];
+		Contact* phone = new Contact[3];
 		phone[0].IsFavorite = true;
 		phone[0].Name = "Bobby";
 		phone[0].Number = 833659;
@@ -27,28 +28,31 @@ void DemoContact(int size)
 		phone[2].IsFavorite = false;
 		phone[2].Name = "Worst worker";
 		phone[2].Number = 4556;
+		return phone;
 	}
 	}
 	
 }
 
 
-void DemoFilm(int size)
+Film* DemoFilm(int size)
 {
 	switch (size)
 	{
 	case 1:
 	{
-		Film move;
-		move.Name = "Cool Move";
-		move.Rating = 9.0;
-		move.Style = "Love story";
-		move.TimeInMinutes = 190;
-		move.Year = 2007;
+		Film* move = new Film;
+		move->Name = "Cool Move";
+		move->Rating = 9.0;
+		move->Style = "Love story";
+		move->TimeInMinutes = 190;
+		move->Year = 2007;
+			
+		return move;
 	}
 	case 3:
 	{
-		Film move[3];
+		Film* move = new Film[3];
 
 
 		move[0].Name = "Wave";
@@ -71,24 +75,28 @@ void DemoFilm(int size)
 		move[0].Year = 2012;
 		move[1].Year = 2015;
 		move[2].Year = 2020;
+			
+		return move;
 	}
 	}
 }
 
 
-void DemoFlight(int size)
+Flight* DemoFlight(int size)
 {
 	switch (size)
 	{
 	case 1:
 	{
-		Flight flight;
-		flight.EndPoint = "Moscow";
-		flight.StartPoint = "Tomsk";
-		flight.TimeOfFlightMinutes = 300;
+		Flight* flight = new Flight;
+		flight->EndPoint = "Moscow";
+		flight->StartPoint = "Tomsk";
+		flight->TimeOfFlightMinutes = 300;
+
+		return flight;
 	}
 	case 3:
-		Flight flight[3];
+		Flight* flight = new Flight[3];
 
 		flight[0].EndPoint = "New York";
 		flight[1].EndPoint = "Novosibirsk";
@@ -101,24 +109,26 @@ void DemoFlight(int size)
 		flight[0].TimeOfFlightMinutes = 180;
 		flight[1].TimeOfFlightMinutes = 244;
 		flight[2].TimeOfFlightMinutes = 160;
+
+		return flight;
 	}
 }
 
 
-void DemoRectangle(int size)
+Rectangle* DemoRectangle(int size)
 {
 	switch (size)
 	{
 	case 1:
 	{
-		Rectangle rectangle;
-		rectangle.Color = "Blue";
-		rectangle.Length = 4.5;
-		rectangle.Weight = 20.3;
+		Rectangle* rectangle = new Rectangle;
+		rectangle->Color = "Blue";
+		rectangle->Length = 4.5;
+		rectangle->Weight = 20.3;
 	}
 	case 3:
 	{
-		Rectangle rectangle[3];
+		Rectangle* rectangle = new Rectangle[3];
 
 		rectangle[0].Color = "Black";
 		rectangle[1].Color = "Red";
@@ -130,27 +140,31 @@ void DemoRectangle(int size)
 
 		rectangle[0].Weight = 10.3;
 		rectangle[1].Weight = 12.7;
-		rectangle[2].Weight = 18.1;	
+		rectangle[2].Weight = 18.1;
+
+		return rectangle;
 	}
 	}
 	
 }
 
 
-void DemoSong(int size)
+Song* DemoSong(int size)
 {
 	switch (size)
 	{
 	case 1:
 		{
-		Song song;
-		song.CountingInSeconds = 216;
-		song.IsFavorite = false;
-		song.Name = "IDK";
+		Song* song = new Song;
+		song->CountingInSeconds = 216;
+		song->IsFavorite = false;
+		song->Name = "IDK";
+
+		return song;
 		}
 	case 3:
 	{
-		Song song[3];
+		Song* song = new Song[3];
 
 		song[0].CountingInSeconds = 127;
 		song[1].CountingInSeconds = 83;	
@@ -162,26 +176,30 @@ void DemoSong(int size)
 
 		song[0].Name = "Beep";
 		song[1].Name = "Rock wave";
-		song[2].Name = "Jazz 3D";	
+		song[2].Name = "Jazz 3D";
+
+		return song;
 	}
 	}	
 }
 
 
-void DemoSubject(int size)
+Subject* DemoSubject(int size)
 {
 	switch (size)
 	{
 	case 1:
 		{
-		Subject subject;
-		subject.Name = "Math";
-		subject.IsCertified = true;
-		subject.Mark = 5;
+		Subject* subject = new Subject;
+		subject->Name = "Math";
+		subject->IsCertified = true;
+		subject->Mark = 5;
+
+		return subject;
 		}
 	case 3:
 	{
-		Subject subject[3];
+		Subject* subject = new Subject[3];
 
 		subject[0].Name = "English";
 		subject[1].Name = "Music";
@@ -193,9 +211,9 @@ void DemoSubject(int size)
 
 		subject[0].Mark = 5;
 		subject[1].Mark = 5;
-		subject[2].Mark = 5;	
+		subject[2].Mark = 5;
+		return subject;
 	}
-		
 	}
 	
 }
@@ -229,6 +247,7 @@ void DemoFlightInput()
 	std::cout	<< "Flight from " << flight.StartPoint << " to " << flight.EndPoint
 				<< " today." << std::endl;
 }
+
 
 void DemoFilmInput()
 {
@@ -302,21 +321,23 @@ void DemoSubjectInput()
 }
 
 
-void DemoTime(int size)
+Time* DemoTime(int size)
 {
 	switch (size)
 	{
 	case 1:
 		{
-		Time clock;
+		Time* clock = new Time;
 
-		clock.Hours = 13;
-		clock.Minutes = 27;
-		clock.Seconds = 54;
+		clock->Hours = 13;
+		clock->Minutes = 27;
+		clock->Seconds = 54;
+
+		return clock;
 		}
 	case 3:
 		{
-		Time time[3];
+		Time* time = new Time[3];
 
 		time[0].Hours = 3;
 		time[1].Hours = 7;
@@ -328,9 +349,9 @@ void DemoTime(int size)
 
 		time[0].Seconds = 59;
 		time[1].Seconds = 00;
-		time[2].Seconds = 24;	
+		time[2].Seconds = 24;
+		return time;
 		}
 	}
 	
 }
-

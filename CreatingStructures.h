@@ -62,25 +62,25 @@ struct Subject
 };
 
 
-void DemoRectangle(int size);
+Rectangle* DemoRectangle(int size);
 
 
-void DemoFlight(int size);
+Flight* DemoFlight(int size);
 
 
-void DemoFilm(int size);
+Film* DemoFilm(int size);
 
 
-void DemoTime(int size);
+Time* DemoTime(int size);
 
 
-void DemoContact(int size);
+Contact* DemoContact(int size);
 
 
-void DemoSong(int size);
+Song* DemoSong(int size);
 
 
-void DemoSubject(int size);
+Subject* DemoSubject(int size);
 
 
 void DemoRectangleInput();

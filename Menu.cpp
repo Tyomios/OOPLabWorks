@@ -58,7 +58,7 @@ void CreatingStructureMenu()
 		{
 			case 1:
 			{
-			Rectangle rectangle;
+				Rectangle rectangle;
 			Flight flight;
 			Film move;
 			Time time;
@@ -93,15 +93,44 @@ void CreatingStructureMenu()
 					{
 					case 1:
 						{
-							DemoContact(1);
-							DemoFilm(1);
-							DemoFlight(1);
-							DemoRectangle(1);
-							DemoSong(1);
-							DemoSubject(1);
-							DemoTime(1);
-
-							std::cout << "All works great" << std::endl;
+							Rectangle* rectangle = DemoRectangle(1);
+							std::cout << "Color: " << rectangle->Color
+							<< " parameters: " << rectangle->Length << "x" << rectangle->Weight
+							<< std::endl;
+							
+							Film* film = DemoFilm(1);
+							std::cout << "Name: " << film->Name << " - "
+								<< "Style: " << film->Style << " - "
+								<< "Rating: " << film->Rating << " - "
+								<< "Year: " << film->Year << std::endl;
+							
+							Flight* flight = DemoFlight(1);
+							std::cout << "Start point: " << flight->StartPoint << " - "
+								<< "End point: " << flight->EndPoint << " - "
+								<< "Time of flight: " << flight->TimeOfFlightMinutes
+								<< std::endl;
+							
+							Contact* contact = DemoContact(1);
+							std::cout << "Name: " << contact->Name << " - " << contact->Number << std::endl;
+							
+							Song* song = DemoSong(1);
+							std::cout << "Name: " << song->Name << " - "
+								<< "Favorite: " << song->IsFavorite << " - "
+								<< "Continuing: " << song->CountingInSeconds
+								<< std::endl;
+							
+							Subject* subject = DemoSubject(1);
+							std::cout << "Name: " << subject->Name << " - "
+								<< "Certified: " << subject->IsCertified << " - "
+								<< "Mark: " << subject->Mark
+								<< std::endl;
+							
+							Time* time = DemoTime(1);
+							std::cout << time->Hours << ":"
+								<< time->Minutes << ":"
+								<< time->Seconds
+								<< std::endl;
+							
 							system("pause");
 							break;
 						}
@@ -120,13 +149,72 @@ void CreatingStructureMenu()
 						}
 					case 3:
 						{
-						DemoContact(3);
-						DemoFilm(3);
-						DemoFlight(3);
-						DemoRectangle(3);
-						DemoSong(3);
-						DemoSubject(3);
-						DemoTime(3);
+						Contact* contact = DemoContact(3);
+						for (int i = 0; i < 3;i++)
+						{
+							std::cout << "Name: "<< contact[i].Name <<" - " << contact[i].Number << std::endl;
+						}
+						std::cout << std::endl;
+							
+						Film* film = DemoFilm(3);
+						for (int i = 0; i < 3; i++)
+						{
+							std::cout	<< "Name: " << film[i].Name << " - "
+										<< "Style: "<<film[i].Style << " - "
+										<< "Rating: " << film[i].Rating << " - "
+										<< "Year: "<< film[i].Year	<< std::endl;
+						}
+						std::cout << std::endl;
+							
+						Flight* flight = DemoFlight(3);
+						for (int i = 0; i < 3; i++)
+						{
+							std::cout << "Start point: " << flight[i].StartPoint << " - "
+								<< "End point: " << flight[i].EndPoint<< " - "
+								<< "Time of flight: " << flight[i].TimeOfFlightMinutes
+								<< std::endl;
+						}
+						std::cout << std::endl;
+							
+						Rectangle* rectangle = DemoRectangle(3);
+						for (int i = 0; i < 3; i++)
+						{
+							std::cout << "Parameters: " << rectangle[i].Length << "x"
+								<< rectangle[i].Weight << " , "
+								<< "Color: " << rectangle[i].Color
+								<< std::endl;
+						}
+						std::cout << std::endl;
+							
+						Song* song = DemoSong(3);
+						for (int i = 0; i < 3; i++)
+						{
+							std::cout << "Name: " << song[i].Name << " - "
+								<< "Favorite: " << song[i].IsFavorite << " - "
+								<< "Continuing: " << song[i].CountingInSeconds
+								<< std::endl;
+						}
+						std::cout << std::endl;
+							
+						Subject* subject = DemoSubject(3);
+						for (int i = 0; i < 3; i++)
+						{
+							std::cout << "Name: " << subject[i].Name << " - "
+								<< "Certified: " << subject[i].IsCertified<< " - "
+								<< "Mark: " << subject[i].Mark
+								<< std::endl;
+						}
+						std::cout << std::endl;
+							
+						Time* time = DemoTime(3);
+						for (int i = 0; i < 3; i++)
+						{
+							std::cout << time[i].Hours << ":"
+								<< time[i].Minutes << ":"
+								<< time[i].Seconds
+								<< std::endl;
+						}
+						std::cout << std::endl;
 
 						std::cout << "All works great" << std::endl;
 						system("pause");
