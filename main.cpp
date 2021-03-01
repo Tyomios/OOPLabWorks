@@ -5,7 +5,7 @@
 enum class MenuList
 {
 	ExceptionTasks = 1,
-	ArrayTasks = 2,
+	CreatingStructures = 2,
 	FunctionsTasks = 3,
 	LinksPointersTasks = 4,
 	DynamicMemory = 5,
@@ -17,8 +17,8 @@ int main()
 {
 	while (true)
 	{
-			std::cout << "1 - 1.1.1\n"
-				<< "2 - 1.1.2\n"
+			std::cout << "1 - 1.1.1(exceptions)\n"
+				<< "2 - 1.1.2(creating structures)\n"
 				<< "3 - 1.1.3\n"
 				<< "4 - 1.1.\n"
 				<< "5 - 1.1.\n"
@@ -31,13 +31,11 @@ int main()
 			case MenuList::ExceptionTasks:
 			{
 				ExceprionMenu();
-				
-				system("pause");
 				break;
 			}
-			case MenuList::ArrayTasks:
+			case MenuList::CreatingStructures:
 			{
-				
+				CreatingStructureMenu();
 				break;
 			}
 			case MenuList::FunctionsTasks:

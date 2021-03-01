@@ -1,66 +1,336 @@
 #include "CreatingStructures.h"
 
-void DemoContact()
+#include <iostream>
+
+void DemoContact(int size)
 {
-	Contact phone;
-	phone.IsFavorite = true;
-	phone.Name = "Honne";
+	switch (size)
+	{
+	case 1:
+	{
+		Contact phone;
+		phone.IsFavorite = true;
+		phone.Name = "Honne";
+		phone.Number = 07321;
+	}
+	case 3:
+	{
+		Contact phone[3];
+		phone[0].IsFavorite = true;
+		phone[0].Name = "Bobby";
+		phone[0].Number = 833659;
+
+		phone[1].IsFavorite = true;
+		phone[1].Name = "Lobby Manager";
+		phone[1].Number = 34493;
+
+		phone[2].IsFavorite = false;
+		phone[2].Name = "Worst worker";
+		phone[2].Number = 4556;
+	}
+	}
+	
 }
 
 
-void DemoFilm()
+void DemoFilm(int size)
 {
-	Film move;
-	move.Name = "Cool Move";
-	move.Rating = 9.0;
-	move.Style = "Love story";
-	move.TimeInMinutes = 190;
-	move.Year = 2007;
+	switch (size)
+	{
+	case 1:
+	{
+		Film move;
+		move.Name = "Cool Move";
+		move.Rating = 9.0;
+		move.Style = "Love story";
+		move.TimeInMinutes = 190;
+		move.Year = 2007;
+	}
+	case 3:
+	{
+		Film move[3];
+
+
+		move[0].Name = "Wave";
+		move[1].Name = "Fastest horse";
+		move[2].Name = "City live";
+
+		move[0].Rating = 4.3;
+		move[1].Rating = 5.7;
+		move[2].Rating = 1.3;
+
+
+		move[0].Style = "Action";
+		move[1].Style = "Biography";
+		move[2].Style = "Live";
+
+		move[0].TimeInMinutes = 134;
+		move[1].TimeInMinutes = 45;
+		move[2].TimeInMinutes = 25;
+
+		move[0].Year = 2012;
+		move[1].Year = 2015;
+		move[2].Year = 2020;
+	}
+	}
 }
 
 
-void DemoFlight()
+void DemoFlight(int size)
 {
-	Flight flight;
-	flight.EndPoint = "Moscow";
-	flight.StartPoint = "Tomsk";
-	flight.TimeOfFlightMinutes = 300;
+	switch (size)
+	{
+	case 1:
+	{
+		Flight flight;
+		flight.EndPoint = "Moscow";
+		flight.StartPoint = "Tomsk";
+		flight.TimeOfFlightMinutes = 300;
+	}
+	case 3:
+		Flight flight[3];
+
+		flight[0].EndPoint = "New York";
+		flight[1].EndPoint = "Novosibirsk";
+		flight[2].EndPoint = "Kazan";
+
+		flight[0].StartPoint = "Boston";
+		flight[1].StartPoint = "Moscow";
+		flight[2].StartPoint = "Novosibirsk";
+
+		flight[0].TimeOfFlightMinutes = 180;
+		flight[1].TimeOfFlightMinutes = 244;
+		flight[2].TimeOfFlightMinutes = 160;
+	}
 }
 
 
-void DemoRectangle()
+void DemoRectangle(int size)
+{
+	switch (size)
+	{
+	case 1:
+	{
+		Rectangle rectangle;
+		rectangle.Color = "Blue";
+		rectangle.Length = 4.5;
+		rectangle.Weight = 20.3;
+	}
+	case 3:
+	{
+		Rectangle rectangle[3];
+
+		rectangle[0].Color = "Black";
+		rectangle[1].Color = "Red";
+		rectangle[2].Color = "White";
+
+		rectangle[0].Length = 0.3;
+		rectangle[1].Length = 5.0;
+		rectangle[2].Length = 1.6;
+
+		rectangle[0].Weight = 10.3;
+		rectangle[1].Weight = 12.7;
+		rectangle[2].Weight = 18.1;	
+	}
+	}
+	
+}
+
+
+void DemoSong(int size)
+{
+	switch (size)
+	{
+	case 1:
+		{
+		Song song;
+		song.CountingInSeconds = 216;
+		song.IsFavorite = false;
+		song.Name = "IDK";
+		}
+	case 3:
+	{
+		Song song[3];
+
+		song[0].CountingInSeconds = 127;
+		song[1].CountingInSeconds = 83;	
+		song[2].CountingInSeconds = 77;
+
+		song[0].IsFavorite = true;
+		song[1].IsFavorite = false;
+		song[2].IsFavorite = false;	
+
+		song[0].Name = "Beep";
+		song[1].Name = "Rock wave";
+		song[2].Name = "Jazz 3D";	
+	}
+	}	
+}
+
+
+void DemoSubject(int size)
+{
+	switch (size)
+	{
+	case 1:
+		{
+		Subject subject;
+		subject.Name = "Math";
+		subject.IsCertified = true;
+		subject.Mark = 5;
+		}
+	case 3:
+	{
+		Subject subject[3];
+
+		subject[0].Name = "English";
+		subject[1].Name = "Music";
+		subject[2].Name = "PE";
+
+		subject[0].IsCertified = true;
+		subject[1].IsCertified = true;
+		subject[2].IsCertified = true;
+
+		subject[0].Mark = 5;
+		subject[1].Mark = 5;
+		subject[2].Mark = 5;	
+	}
+		
+	}
+	
+}
+
+
+void DemoRectangleInput()
 {
 	Rectangle rectangle;
-	rectangle.Color = "Blue";
-	rectangle.Length = 4.5;
-	rectangle.Weight = 20.3;
+
+	std::cout << "Enter rectangle's length:" << std::endl;
+	std::cin >> rectangle.Length;
+
+	std::cout << "Enter rectangle's weight:" << std::endl;
+	std::cin >> rectangle.Weight;
+
+	std::cout	<< "Rectangle's parameters:" << rectangle.Length << "x" << rectangle.Weight
+				<< std::endl;
 }
 
 
-void DemoSong()
+void DemoFlightInput()
+{
+	Flight flight;
+
+	std::cout << "Enter start point of flight:" << std::endl;
+	std::cin >> flight.StartPoint;
+
+	std::cout << "Enter end point of flight:" << std::endl;
+	std::cin >> flight.EndPoint;
+
+	std::cout	<< "Flight from " << flight.StartPoint << " to " << flight.EndPoint
+				<< " today." << std::endl;
+}
+
+void DemoFilmInput()
+{
+	Film film;
+
+	std::cout << "Enter move's name:" << std::endl;
+	std::cin >> film.Name;
+
+	std::cout << "Enter move's year:" << std::endl;
+	std::cin >> film.Year;
+
+	std::cout << "Film " << film.Name << " was ready in " << film.Year << std::endl;
+}
+
+
+void DemoTimeInput()
+{
+	Time time;
+
+	std::cout << "Enter time hours:" << std::endl;
+	std::cin >> time.Hours;
+
+	std::cout << "Enter time minutes:" << std::endl;
+	std::cin >> time.Minutes;
+
+	std::cout << "Enter time seconds:" << std::endl;
+	std::cin >> time.Seconds;
+
+	std::cout << "Time: " << time.Hours << ":" << time.Minutes << ":" << time.Seconds << std::endl;
+}
+
+void DemoContactInput()
+{
+	Contact contact;
+
+	std::cout << "Enter contact's name: " << std::endl;
+	std::cin >> contact.Name;
+
+	std::cout << "Enter contact's number: " << std::endl;
+	std::cin >> contact.Number;
+
+	std::cout << "Contact: " << contact.Name << "(" << contact.Number << ")" << std::endl;
+}
+
+void DemoSongInput()
 {
 	Song song;
 
-	song.CountingInSeconds = 216;
-	song.IsFavorite = false;
-	song.Name = "IDK";
+	std::cout << "Enter song's name:" << std::endl;
+	std::cin >> song.Name;
+
+	std::cout << "Enter song's counting in seconds: " << std::endl;
+	std::cin >> song.CountingInSeconds;
+
+	std::cout	<< "Song - " << song.Name
+				<< "\ncontinuing: " << (song.CountingInSeconds / 60) << ":" << (song.CountingInSeconds % 60)
+				<< std::endl;	
 }
 
-
-void DemoSubject()
+void DemoSubjectInput()
 {
 	Subject subject;
-	subject.Name = "Math";
-	subject.IsCertified = true;
-	subject.Mark = 5;
+
+	std::cout << "Enter subject's name: " << std::endl;
+	std::cin >> subject.Name;
+
+	std::cout << "Enter subject's mark: " << std::endl;
+	std::cin >> subject.Mark;
+	
+	std::cout << "Subject: " << subject.Name << "\nMark: " << subject.Mark << std::endl;
 }
 
 
-void DemoTime()
+void DemoTime(int size)
 {
-	Time clock;
+	switch (size)
+	{
+	case 1:
+		{
+		Time clock;
 
-	clock.Hours = 13;
-	clock.Minutes = 27;
-	clock.Seconds = 54;
+		clock.Hours = 13;
+		clock.Minutes = 27;
+		clock.Seconds = 54;
+		}
+	case 3:
+		{
+		Time time[3];
+
+		time[0].Hours = 3;
+		time[1].Hours = 7;
+		time[2].Hours = 20;
+
+		time[0].Minutes = 59;
+		time[1].Minutes = 30;
+		time[2].Minutes = 22;
+
+		time[0].Seconds = 59;
+		time[1].Seconds = 00;
+		time[2].Seconds = 24;	
+		}
+	}
+	
 }
+
