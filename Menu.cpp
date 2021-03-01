@@ -243,6 +243,76 @@ void CreatingStructureMenu()
 	}
 }
 
+void StructsAndPointersMenu()
+{
+	int userChoose;
+
+	while (true)
+	{
+		std::cout << "1 - 4.1 (use pointer with structure)\n"
+			<< "2 - 4.2(two equal pointers for rectangle)\n"
+			<< "3 - 4.3(two equal pointers for other structures)\n"
+			<< "4 - 4.4(wrong pointers see comments in code)\n"
+			<< "0 <- back" << std::endl;
+
+		userChoose = GetIntValue();
+		switch (userChoose)
+		{
+		case 1:
+		{
+			Rectangle* rectangle = DemoRectangle(1);
+			std::cout << "Color: " << rectangle->Color
+				<< " parameters: " << rectangle->Length << "x" << rectangle->Weight
+				<< std::endl;
+
+			rectangle->Color = "Gray";
+			rectangle->Length = 12.1;
+			rectangle->Weight = 77.6;
+			std::cout << "New parameters:" << "Color: " << rectangle->Color
+				<< " parameters: " << rectangle->Length << "x" << rectangle->Weight
+				<< std::endl;
+
+			system("pause");
+			break;
+		}
+		case 2:
+		{
+			Rectangle rectangle;
+			Rectangle* rectanglePointer = &rectangle;
+			Rectangle* rectangleNextPointer = &rectangle;
+
+			std::cout << " 1) " << rectanglePointer
+				<< "\n 2) " << rectangleNextPointer << std::endl;
+				
+			system("pause");
+			break;
+		}
+		case 3:
+			{
+				
+			}
+		case 4:
+			{
+				WrongPointers();
+				std::cout << "All works good" << std::endl;
+
+				system("pause");
+				break;
+			}
+		case 0:
+		{
+			system("cls");
+			return;
+		}
+		default:
+		{
+			std::cout << "Unknown command" << std::endl;
+		}
+		}
+		system("cls");
+	}
+}
+
 
 int GetIntValue()
 {

@@ -96,6 +96,7 @@ Flight* DemoFlight(int size)
 		return flight;
 	}
 	case 3:
+	{
 		Flight* flight = new Flight[3];
 
 		flight[0].EndPoint = "New York";
@@ -112,6 +113,8 @@ Flight* DemoFlight(int size)
 
 		return flight;
 	}
+		
+	}
 }
 
 
@@ -125,6 +128,7 @@ Rectangle* DemoRectangle(int size)
 		rectangle->Color = "Blue";
 		rectangle->Length = 4.5;
 		rectangle->Weight = 20.3;
+		return rectangle;
 	}
 	case 3:
 	{

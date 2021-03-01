@@ -6,7 +6,7 @@ enum class MenuList
 {
 	ExceptionTasks = 1,
 	CreatingStructures = 2,
-	FunctionsTasks = 3,
+	StructsAndPointers = 3,
 	LinksPointersTasks = 4,
 	DynamicMemory = 5,
 	Exit = 0
@@ -19,9 +19,9 @@ int main()
 	{
 			std::cout << "1 - 1.1.1(exceptions)\n"
 				<< "2 - 1.1.2(creating structures)\n"
-				<< "3 - 1.1.3\n"
-				<< "4 - 1.1.\n"
-				<< "5 - 1.1.\n"
+				<< "3 - 1.1.3(structs and pointers)\n"
+				<< "4 - 1.1.4\n"
+				<< "5 - 1.1.5\n"
 				<< "0 - Exit" << std::endl;
 
 			int userChoose = GetIntValue();
@@ -38,9 +38,9 @@ int main()
 				CreatingStructureMenu();
 				break;
 			}
-			case MenuList::FunctionsTasks:
+			case MenuList::StructsAndPointers:
 			{
-				
+				StructsAndPointersMenu();
 				break;
 			}
 			case MenuList::LinksPointersTasks:
