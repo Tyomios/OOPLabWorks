@@ -13,7 +13,7 @@ void ArrayTasks()
 					<< "2 - 2.2(count values in float array, more than user's value)\n"
 					<< "3 - 2.3(char array with alphabet chars)\n"
 					<< "0 <- back" << std::endl;
-
+		//TODO: Проверка позволяет (и даже предлагает) ввести пользователю дробные значения
 		userChoose = GetIntValue();
 		switch (userChoose)
 		{
@@ -21,7 +21,9 @@ void ArrayTasks()
 			{
 				int data[10];
 				srand(-44);
-
+				
+				//TODO: Дублирование кода. Рандомное заполнение и инициализацию 
+				//можно вынести в отдельную функцию
 				for (int i = 0; i < 10; i++)
 				{
 					data[i] = rand();
@@ -35,7 +37,8 @@ void ArrayTasks()
 
 				SelectionSort(data);
 				std::cout << "\nhere is sorted array" << std::endl;
-
+				//TODO: Идет дублирование кода в файле из-за циклов вывода, целесообразнее написать метод,
+				//которые позволит выводить массивы на экран
 				for (int i = 0; i < 10; i++)
 				{
 					std::cout << data[i] << "\t";
@@ -151,6 +154,8 @@ void FunctionsTasks()
 				{
 					RoundToTens(value);
 					std::cout << "For " << temp << " rounded value is " << value << std::endl;
+					//TODO: Стоит избегать "магических чиел в коде". Лучше вынести 
+					//вынести в переменную и дать осмысленное название
 					value += 12;
 					temp = value;
 				}
@@ -187,18 +192,22 @@ void DynamicMemoryTasks()
 			<< "8 - 5.8(memory leaks)\n"
 			<< "9 - Task six\n"
 			<< "0 <- back" << std::endl;
-
+		//TODO: Проверка позволяет (и даже предлагает) ввести пользователю дробные значения
 		const int userChoose = GetIntValue();
 		switch (userChoose)
 		{
 			case 1:
 			{
+				//TODO: Инициализацию и заполнение массива лучше вынести в отдельную функцию
+				// К тому же, в примере работы функции в методичке цифр больше 
 				int lenght = 3;
 				double* data = new double[lenght];
 				data[0] = 6.3;
 				data[1] = 0.1;
 				data[2] = -55.2;
 				std::cout << "Array of double:" << std::endl;
+				//TODO: Идет дублирование кода в файле из-за циклов вывода, целесообразнее написать метод,
+				//которые позволит выводить массивы на экран
 				for (int i = 0; i < lenght; i++)
 				{
 					std::cout << data[i] << "\t";
@@ -210,11 +219,15 @@ void DynamicMemoryTasks()
 			}
 			case 2:
 			{
+				//TODO: В идеале в файле пользовательского инерфейса должны быть только вызовы функций,
+				// но не выделение памяти, обработка массивов и т.д.
 				int lenght = 3;
 				bool* data = new bool[lenght];
 				data[0] = true;
 				data[1] = (1 < 0);
 				data[2] = false;
+				//TODO: Идет дублирование кода в файле из-за циклов вывода, целесообразнее написать метод,
+				//которые позволит выводить массивы на экран
 				std::cout << "Array of bool:" << std::endl;
 				for (int i = 0; i < lenght; i++)
 				{
@@ -227,6 +240,7 @@ void DynamicMemoryTasks()
 			}
 			case 3:
 			{
+				//TODO: Неккоректно работает при вводе дробного числа
 				int lenght;
 				lenght = GetIntValue();
 
@@ -356,6 +370,7 @@ void DynamicMemoryTasks()
 				system("pause");
 				break;
 			}
+			//TODO: При нажатии 8 ничего не происходит и не дает выбрать другой пункт
 			case 8:
 			{
 				int count = 15;
@@ -364,6 +379,7 @@ void DynamicMemoryTasks()
 				std::cout << "Count is: " << CountPositiveValues(values, count) << std::endl;
 
 				delete[] values;
+				//TODO: RSDN
 				std::cout << "Here we need to clear memory from array if we want to use ReadArray() again" << std::endl;
 					
 				count = 20;
@@ -423,6 +439,7 @@ void LinksAndPointersTasks()
 			<< "7 - 4.7(syntex of *)\n"
 			<< "8 - 4.8(show addresses if we use pointers as a attribute for function)\n"
 			<< "0 <- back" << std::endl;
+		//TODO: Проверка позволяет (и даже предлагает) ввести пользователю дробные значения
 
 		const int userChoose = GetIntValue();
 		switch (userChoose)
