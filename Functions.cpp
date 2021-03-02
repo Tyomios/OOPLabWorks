@@ -15,12 +15,14 @@ double GetPower(double base, int exponent)
 
 void DemoGetPower(double base, int exponent)
 {
+	//TODO: RSDN
 	std::cout << base << " ^ " << exponent << " = " << GetPower(base, exponent) << std::endl;
 }
 
 
 void RoundToTens(int& value)
 {
+	//TODO: Грамматическая ошибка имени переменной
 	int resoult = value / 10;
 	int growFactor = value % 10;
 	if (growFactor >= 5)
