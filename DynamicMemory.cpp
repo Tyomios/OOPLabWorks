@@ -1,4 +1,6 @@
 #include "DynamicMemory.h"
+#include "Common.h"
+
 #include <iostream>
 
 
@@ -21,28 +23,11 @@ void SelectionSort(double* data)
 
 //TODO: Название метода не соответсвует его функциональности
 //TODO: Метод валидации лучше вынести в  отдельный файл с сервисными 
-//функциями, так как этот метод используется не только в этом файле
-int GetIntValue()
-{
-	int value;
-	std::cout << "\nEnter value:" << std::endl;
-	std::cin >> value;
-
-	if (std::cin.fail())
-	{
-		std::cin.clear();
-		std::cin.ignore(32767, '\n');
-		std::cout << "Error. You need to enter digits (like 1.4 or -6.0).\n";
-		return GetIntValue();
-	}
-
-	return value;
-}
-
+//функциями, так как этот метод используется не только в этом файле + перенес в common.cpp
 
 void SearchIndex(int* data)
 {
-	int searchingValue = GetIntValue();
+	int searchingValue = GetValidValue();
 	int count = 0;
 	for (int i = 0; i < 10; i++)
 	{
@@ -77,7 +62,8 @@ int* ReadArray(int count)
 	int* values = new int[count];
 	for (int i = 0; i < count; i++)
 	{
-		std::cin >> values[i];
+		std::cout << i + 1 << ") element" << std::endl;
+		values[i] = GetValidValue();
 	}
 	return values;
 }

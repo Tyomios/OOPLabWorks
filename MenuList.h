@@ -7,6 +7,7 @@
 #include "LinksAndPointers.h"
 #include "DynamicMemory.h"
 #include "TaskSix.h"
+#include "Common.h"
 
 /// @brief Меню для заданий 1.2.х
 void ArrayTasks();

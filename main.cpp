@@ -28,7 +28,7 @@ int main()
 			<< "5 - 1.1.5\n"
 			<< "0 - Exit" << endl;
 
-		int userChoose = GetIntValue();
+		int userChoose = GetValidValue();
 
 		switch (static_cast<MenuList>(userChoose))
 		{

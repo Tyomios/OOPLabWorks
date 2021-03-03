@@ -13,57 +13,39 @@ void ArrayTasks()
 					<< "2 - 2.2(count values in float array, more than user's value)\n"
 					<< "3 - 2.3(char array with alphabet chars)\n"
 					<< "0 <- back" << std::endl;
-		//TODO: Проверка позволяет (и даже предлагает) ввести пользователю дробные значения
-		userChoose = GetIntValue();
+		//TODO: Проверка позволяет (и даже предлагает) ввести пользователю дробные значения +
+		userChoose = GetValidValue();
 		switch (userChoose)
 		{
 			case 1:
 			{
-				int data[10];
-				srand(-44);
+				int* data = CreateIntArray(10);
 				
 				//TODO: Дублирование кода. Рандомное заполнение и инициализацию 
-				//можно вынести в отдельную функцию
-				for (int i = 0; i < 10; i++)
-				{
-					data[i] = rand();
-				}
+				//можно вынести в отдельную функцию +
 
 				std::cout << "here is unsorted array" << std::endl;
-				for (int i = 0; i < 10; i++)
-				{
-					std::cout << data[i] << "\t";
-				}
+				ShowIntArray(data, 10);
 
 				SelectionSort(data);
 				std::cout << "\nhere is sorted array" << std::endl;
 				//TODO: Идет дублирование кода в файле из-за циклов вывода, целесообразнее написать метод,
-				//которые позволит выводить массивы на экран
-				for (int i = 0; i < 10; i++)
-				{
-					std::cout << data[i] << "\t";
-				}
+				//которые позволит выводить массивы на экран +
+				ShowIntArray(data, 10);
 
+				delete[] data;
 				system("pause");
 				break;
 			}
 			case 2:
 			{
-				double data[12];
-				srand(-44.5);
-
-				for (int i = 0; i < 12; i++)
-				{
-					data[i] = (double)rand() / RAND_MAX * (25.0 - 0.01) + 0.01;
-				}
-
+				double *data = CreateDoubleArray(12);
+				
 				std::cout << "here is array" << std::endl;
-				for (int i = 0; i < 12; i++)
-				{
-					std::cout << data[i] << "\t";
-				}
+				ShowDoubleArray(data, 12);
 				SearchValues(data);
 
+				delete[] data;
 				system("pause");
 				break;
 			}
@@ -97,6 +79,8 @@ void ArrayTasks()
 			default:
 			{
 				std::cout << "Unknown command" << std::endl;
+				system("pause");
+				break;
 			}
 		}
 		system("cls");
@@ -116,7 +100,7 @@ void FunctionsTasks()
 					<< "4 - 3.4(round to tens function)\n"
 					<< "0 <- back" << std::endl;
 
-		userChoose = GetIntValue();
+		userChoose = GetValidValue();
 		switch (userChoose)
 		{
 			case 1:
@@ -148,16 +132,17 @@ void FunctionsTasks()
 			}
 			case 4:
 			{
-				int value = 136;
-				int temp = value;
+				int changeableValue = 136;
+				int temp = changeableValue;
+				const int term = 12;
 				for (int i = 0; i < 3; i++)
 				{
-					RoundToTens(value);
-					std::cout << "For " << temp << " rounded value is " << value << std::endl;
-					//TODO: Стоит избегать "магических чиел в коде". Лучше вынести 
-					//вынести в переменную и дать осмысленное название
-					value += 12;
-					temp = value;
+					RoundToTens(changeableValue);
+					std::cout << "For " << temp << " rounded value is " << changeableValue << std::endl;
+					//TODO: Стоит избегать "магических чиcел в коде". Лучше вынести 
+					//вынести в переменную и дать осмысленное название +
+					changeableValue += term;
+					temp = changeableValue;
 				}
 
 				system("pause");
@@ -192,26 +177,19 @@ void DynamicMemoryTasks()
 			<< "8 - 5.8(memory leaks)\n"
 			<< "9 - Task six\n"
 			<< "0 <- back" << std::endl;
-		//TODO: Проверка позволяет (и даже предлагает) ввести пользователю дробные значения
-		const int userChoose = GetIntValue();
+		//TODO: Проверка позволяет (и даже предлагает) ввести пользователю дробные значения +
+		const int userChoose = GetValidValue();
 		switch (userChoose)
 		{
 			case 1:
 			{
 				//TODO: Инициализацию и заполнение массива лучше вынести в отдельную функцию
-				// К тому же, в примере работы функции в методичке цифр больше 
-				int lenght = 3;
-				double* data = new double[lenght];
-				data[0] = 6.3;
-				data[1] = 0.1;
-				data[2] = -55.2;
+				// К тому же, в примере работы функции в методичке цифр больше +
+				double* data = CreateDoubleArray(8);
 				std::cout << "Array of double:" << std::endl;
 				//TODO: Идет дублирование кода в файле из-за циклов вывода, целесообразнее написать метод,
-				//которые позволит выводить массивы на экран
-				for (int i = 0; i < lenght; i++)
-				{
-					std::cout << data[i] << "\t";
-				}
+				//которые позволит выводить массивы на экран +
+				ShowDoubleArray(data, 8);
 				delete[] data;
 
 				system("pause");
@@ -220,19 +198,13 @@ void DynamicMemoryTasks()
 			case 2:
 			{
 				//TODO: В идеале в файле пользовательского инерфейса должны быть только вызовы функций,
-				// но не выделение памяти, обработка массивов и т.д.
-				int lenght = 3;
-				bool* data = new bool[lenght];
-				data[0] = true;
-				data[1] = (1 < 0);
-				data[2] = false;
+				// но не выделение памяти, обработка массивов и т.д. +
+				const int length = 3;
+				bool* data = CreateBoolArray(length);
 				//TODO: Идет дублирование кода в файле из-за циклов вывода, целесообразнее написать метод,
-				//которые позволит выводить массивы на экран
+				//которые позволит выводить массивы на экран +
 				std::cout << "Array of bool:" << std::endl;
-				for (int i = 0; i < lenght; i++)
-				{
-					std::cout << data[i] << "\t";
-				}
+				ShowBoolArray(data, length);
 				delete[] data;
 
 				system("pause");
@@ -240,13 +212,13 @@ void DynamicMemoryTasks()
 			}
 			case 3:
 			{
-				//TODO: Неккоректно работает при вводе дробного числа
-				int lenght;
-				lenght = GetIntValue();
+				//TODO: Неккоректно работает при вводе дробного числа +
+				int length;
+				length = GetValidValue();
 
-				char* data = new char[lenght];
+				char* data = new char[length];
 
-				for (int i = 0; i < lenght; i++)
+				for (int i = 0; i < length; i++)
 				{
 					std::cout << "Enter symbol for " << i + 1 << " element:";
 					std::cin >> data[i];
@@ -254,7 +226,7 @@ void DynamicMemoryTasks()
 				}
 
 				std::cout << "Here is your array:" << std::endl;
-				for (int i = 0; i < lenght; i++)
+				for (int i = 0; i < length; i++)
 				{
 					std::cout << data[i] << "\t";
 				}
@@ -265,27 +237,17 @@ void DynamicMemoryTasks()
 			}
 			case 4:
 			{
-				int lenght = 10;
+				int length = 10;
 
-				double* data = new double[lenght];
-				for (int i = 0; i < lenght; i++)
-				{
-					data[i] = (double)rand() / RAND_MAX * (25.0 - 0.01) + 0.01;
-				}
+				double* data = CreateDoubleArray(length);
 
 				std::cout << "Here is double array:" << std::endl;
-				for (int i = 0; i < lenght; i++)
-				{
-					std::cout << data[i] << "\t";
-				}
+				ShowDoubleArray(data, length);
 
 				SelectionSort(data);
 
 				std::cout << "\nHow it's sorted :3" << std::endl;
-				for (int i = 0; i < lenght; i++)
-				{
-					std::cout << data[i] << "\t";
-				}
+				ShowDoubleArray(data, length);
 				delete[] data;
 
 				system("pause");
@@ -293,19 +255,12 @@ void DynamicMemoryTasks()
 			}
 			case 5:
 			{
-				int lenght = 10;
+				int length = 10;
 
-				int* data = new int[lenght];
-				for (int i = 0; i < lenght; i++)
-				{
-					data[i] = rand();
-				}
+				int* data = CreateIntArray(length);
 
 				std::cout << "Here is integer array:" << std::endl;
-				for (int i = 0; i < lenght; i++)
-				{
-					std::cout << data[i] << "\t";
-				}
+				ShowIntArray(data, length);
 
 				SearchIndex(data);
 				delete[] data;
@@ -333,6 +288,7 @@ void DynamicMemoryTasks()
 				std::cout << "\nHere is letters from your array" << std::endl;
 				SearchValues(data, length);
 
+				delete[] data;
 				system("pause");
 				break;
 			}
@@ -370,20 +326,30 @@ void DynamicMemoryTasks()
 				system("pause");
 				break;
 			}
-			//TODO: При нажатии 8 ничего не происходит и не дает выбрать другой пункт
+			//TODO: При нажатии 8 ничего не происходит и не дает выбрать другой пункт +
 			case 8:
 			{
-				int count = 15;
+				std::cout << "For this task you need to input"
+					<< " 4 values in array" << std::endl;
+					
+				int count = 4;
 				int* values = ReadArray(count);
 
+				system("cls");
 				std::cout << "Count is: " << CountPositiveValues(values, count) << std::endl;
 
 				delete[] values;
-				//TODO: RSDN
-				std::cout << "Here we need to clear memory from array if we want to use ReadArray() again" << std::endl;
+				//TODO: RSDN +
+				std::cout << "Here we need to clear memory from "
+						<< "array if we want to use ReadArray() again" << std::endl;
+
 					
-				count = 20;
+				std::cout << "For this task you need to input"
+					<< " 6 values in array" << std::endl;
+				count = 6;
 				values = ReadArray(count);
+
+				system("cls");
 				std::cout << "Count is: " << CountPositiveValues(values, count) << std::endl;
 
 				delete[] values;
@@ -393,16 +359,10 @@ void DynamicMemoryTasks()
 			}
 			case 9:
 			{
-				int lenght = 3;
-				double* data = new double[lenght];
-				data[0] = 6.3;
-				data[1] = 0.1;
-				data[2] = -55.2;
+				int length = 3;
+				double* data = CreateDoubleArray(length);
 				std::cout << "Array of double:" << std::endl;
-				for (int i = 0; i < lenght; i++)
-				{
-					std::cout << data[i] << "\t";
-				}
+				ShowDoubleArray(data, length);
 
 				std::cout << "Sum of positive in array: " << GetSumOfPositive(data) << std::endl;
 
@@ -439,9 +399,9 @@ void LinksAndPointersTasks()
 			<< "7 - 4.7(syntex of *)\n"
 			<< "8 - 4.8(show addresses if we use pointers as a attribute for function)\n"
 			<< "0 <- back" << std::endl;
-		//TODO: Проверка позволяет (и даже предлагает) ввести пользователю дробные значения
+		//TODO: Проверка позволяет (и даже предлагает) ввести пользователю дробные значения + 
 
-		const int userChoose = GetIntValue();
+		const int userChoose = GetValidValue();
 		switch (userChoose)
 		{
 		case 1:

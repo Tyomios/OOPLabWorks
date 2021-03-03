@@ -1,5 +1,6 @@
 #include "LinksAndPointers.h"
 
+
 void Foo(double a)
 {
 	std::cout << "Address of a in Foo(): " << &a << std::endl;
