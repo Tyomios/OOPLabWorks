@@ -7,7 +7,7 @@
 struct Rectangle
 {
 	double Length;
-	double Weight;
+	double Width;
 	std::string Color;
 };
 

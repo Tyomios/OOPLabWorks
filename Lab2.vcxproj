@@ -139,16 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Common.cpp" />
     <ClCompile Include="CreatingStructures.cpp" />
     <ClCompile Include="ExсeptionProcessing.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="StructsAndFunctions.cpp" />
     <ClCompile Include="StructsAndPointers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common.h" />
     <ClInclude Include="CreatingStructures.h" />
     <ClInclude Include="ExсeptionProcessing.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="StructsAndFunctions.h" />
     <ClInclude Include="StructsAndPointers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

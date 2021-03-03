@@ -127,7 +127,7 @@ Rectangle* DemoRectangle(int size)
 		Rectangle* rectangle = new Rectangle;
 		rectangle->Color = "Blue";
 		rectangle->Length = 4.5;
-		rectangle->Weight = 20.3;
+		rectangle->Width = 20.3;
 		return rectangle;
 	}
 	case 3:
@@ -142,9 +142,9 @@ Rectangle* DemoRectangle(int size)
 		rectangle[1].Length = 5.0;
 		rectangle[2].Length = 1.6;
 
-		rectangle[0].Weight = 10.3;
-		rectangle[1].Weight = 12.7;
-		rectangle[2].Weight = 18.1;
+		rectangle[0].Width = 10.3;
+		rectangle[1].Width = 12.7;
+		rectangle[2].Width = 18.1;
 
 		return rectangle;
 	}
@@ -231,9 +231,9 @@ void DemoRectangleInput()
 	std::cin >> rectangle.Length;
 
 	std::cout << "Enter rectangle's weight:" << std::endl;
-	std::cin >> rectangle.Weight;
+	std::cin >> rectangle.Width;
 
-	std::cout	<< "Rectangle's parameters:" << rectangle.Length << "x" << rectangle.Weight
+	std::cout	<< "Rectangle's parameters:" << rectangle.Length << "x" << rectangle.Width
 				<< std::endl;
 }
 

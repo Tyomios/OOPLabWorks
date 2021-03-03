@@ -4,6 +4,8 @@
 #include "ExсeptionProcessing.h"
 #include "CreatingStructures.h"
 #include "StructsAndPointers.h"
+#include "StructsAndFunctions.h"
+#include "Common.h"
 
 /// @brief Интерфейс для проверки заданий по обработке исключений
 void ExceprionMenu();
@@ -11,11 +13,9 @@ void ExceprionMenu();
 /// @brief Интерфейс для проверки заданий по создаию структур
 void CreatingStructureMenu();
 
-/// @brief 
+/// @brief Интерфейс для проверки заданий по работе с указателями 
 void StructsAndPointersMenu();
 
-/// @brief Получение целоочисленного значения с защитой
-//
-/// @return Корректное целочисленное значение
-int GetIntValue();
+/// @brief Интерфейс для проверки заданий по работе в функциях
+void StructsAndFunctionsMenu();
 #endif

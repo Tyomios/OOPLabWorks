@@ -8,7 +8,7 @@ void ExceprionMenu()
 	while (true)
 	{
 		std::cout	<< "1 - 1.1 (exception practice)\n"
-					<< "2 - 2.2(try/catch practice)\n"
+					<< "2 - 1.2(try/catch practice)\n"
 					<< "0 <- back" << std::endl;
 
 		userChoose = GetIntValue();
@@ -95,7 +95,7 @@ void CreatingStructureMenu()
 						{
 							Rectangle* rectangle = DemoRectangle(1);
 							std::cout << "Color: " << rectangle->Color
-							<< " parameters: " << rectangle->Length << "x" << rectangle->Weight
+							<< " parameters: " << rectangle->Length << "x" << rectangle->Width
 							<< std::endl;
 							
 							Film* film = DemoFilm(1);
@@ -180,7 +180,7 @@ void CreatingStructureMenu()
 						for (int i = 0; i < 3; i++)
 						{
 							std::cout << "Parameters: " << rectangle[i].Length << "x"
-								<< rectangle[i].Weight << " , "
+								<< rectangle[i].Width << " , "
 								<< "Color: " << rectangle[i].Color
 								<< std::endl;
 						}
@@ -262,14 +262,14 @@ void StructsAndPointersMenu()
 		{
 			Rectangle* rectangle = DemoRectangle(1);
 			std::cout << "Color: " << rectangle->Color
-				<< " parameters: " << rectangle->Length << "x" << rectangle->Weight
+				<< " parameters: " << rectangle->Length << "x" << rectangle->Width
 				<< std::endl;
 
 			rectangle->Color = "Gray";
 			rectangle->Length = 12.1;
-			rectangle->Weight = 77.6;
+			rectangle->Width = 77.6;
 			std::cout << "New parameters:" << "Color: " << rectangle->Color
-				<< " parameters: " << rectangle->Length << "x" << rectangle->Weight
+				<< " parameters: " << rectangle->Length << "x" << rectangle->Width
 				<< std::endl;
 
 			system("pause");
@@ -313,20 +313,87 @@ void StructsAndPointersMenu()
 	}
 }
 
-
-int GetIntValue()
+void StructsAndFunctionsMenu()
 {
-	int value;
-	std::cout << "\nEnter value:" << std::endl;
-	std::cin >> value;
+	int userChoose;
 
-	if (std::cin.fail())
+	while (true)
 	{
-		std::cin.clear();
-		std::cin.ignore(32767, '\n');
-		std::cout << "Error. You need to enter digits (like 1.4 or -6.0).\n";
-		return GetIntValue();
-	}
+		std::cout << "1 - 5.1 (read and write structure using link)\n"
+			<< "2 - 5.2(read and write array)\n"
+			<< "3 - 5.3(swap values in a pair of structures)\n"
+			<< "4 - 5.4(find the biggest length object)\n"
+			<< "5 - 5.5(find the biggest square object)\n"
+			<< "0 <- back" << std::endl;
 
-	return value;
+		userChoose = GetIntValue();
+		switch (userChoose)
+		{
+		case 1:
+		{
+			Rectangle rectangle;
+			ReadRectangle(rectangle);
+			WriteRectangle(rectangle);
+			system("pause");
+			break;
+		}
+		case 2:
+		{
+			DemoReadAndWriteRectangles();
+			system("pause");
+			break;
+		}
+		case 3:
+		{
+			Rectangle rectangleOne;
+			Rectangle rectangleTwo;
+			ReadRectangle(rectangleOne);
+			ReadRectangle(rectangleTwo);
+			WriteRectangle(rectangleOne);
+			WriteRectangle(rectangleTwo);
+				
+			Exchange(rectangleOne, rectangleTwo);
+			WriteRectangle(rectangleOne);
+			WriteRectangle(rectangleTwo);
+			system("pause");
+			break;
+		}
+		case 4:
+		{
+			Rectangle* rectangles = new Rectangle[5];
+			for (int i = 0; i < 5; i++)
+			{
+				ReadRectangle(rectangles[i]);
+			}
+				
+			FindRectangle(rectangles, 5);
+			delete[] rectangles;
+			system("pause");
+			break;
+		}
+		case 5:
+		{
+			Rectangle* rectangles = new Rectangle[5];
+			for (int i = 0; i < 5; i++)
+			{
+				ReadRectangle(rectangles[i]);
+			}
+				
+			FindMaxRectangle(rectangles, 5);
+			delete[] rectangles;
+			system("pause");
+			break;
+		}
+		case 0:
+		{
+			system("cls");
+			return;
+		}
+		default:
+		{
+			std::cout << "Unknown command" << std::endl;
+		}
+		}
+		system("cls");
+	}
 }
