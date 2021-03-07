@@ -441,3 +441,56 @@ void StructsAndMemoryMenu()
 		system("cls");
 	}
 }
+
+void ConstructorsMenu()
+{
+	int userChoose;
+
+	while (true)
+	{
+		std::cout << "1 - 7.1 (circle functions)\n"
+			<< "2 - 7.2(other structs functions)\n"
+			<< "0 <- back" << std::endl;
+
+		userChoose = GetIntValue();
+		switch (userChoose)
+		{
+		case 1:
+		{
+			std::string color = "red";
+			CopyCircle(MakeCircle(3.4, 6.0, 12.3, color));
+			std::cout << "All works good" << std::endl;
+			system("pause");
+			break;
+		}
+		case 2:
+		{
+			std::string filmName = "Batman";
+			std::string filmStyle = "Action";
+			CopyFilm(MakeFilm(filmName,120,2005,filmStyle,5.5));
+
+			std::string flightStart = "Moscow";
+			std::string flightEnd = "Tomsk";
+			CopyFlight(MakeFlight(flightStart, flightEnd, 109));
+
+			std::string color = "red";
+			CopyRectangle(MakeRectangle(12.5,7.0, color));
+			CopyTime(MakeTime(5,45,23));
+
+			std::cout << "All works good" << std::endl;
+			system("pause");
+			break;
+		}
+		case 0:
+		{
+			system("cls");
+			return;
+		}
+		default:
+		{
+			std::cout << "Unknown command" << std::endl;
+		}
+		}
+		system("cls");
+	}
+}
