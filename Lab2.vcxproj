@@ -145,6 +145,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="StructsAndFunctions.cpp" />
+    <ClCompile Include="StructsAndMemory.cpp" />
     <ClCompile Include="StructsAndPointers.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="ExсeptionProcessing.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="StructsAndFunctions.h" />
+    <ClInclude Include="StructsAndMemory.h" />
     <ClInclude Include="StructsAndPointers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

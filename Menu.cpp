@@ -243,6 +243,7 @@ void CreatingStructureMenu()
 	}
 }
 
+
 void StructsAndPointersMenu()
 {
 	int userChoose;
@@ -313,6 +314,7 @@ void StructsAndPointersMenu()
 	}
 }
 
+
 void StructsAndFunctionsMenu()
 {
 	int userChoose;
@@ -381,6 +383,48 @@ void StructsAndFunctionsMenu()
 				
 			FindMaxRectangle(rectangles, 5);
 			delete[] rectangles;
+			system("pause");
+			break;
+		}
+		case 0:
+		{
+			system("cls");
+			return;
+		}
+		default:
+		{
+			std::cout << "Unknown command" << std::endl;
+		}
+		}
+		system("cls");
+	}
+}
+
+
+void StructsAndMemoryMenu()
+{
+	int userChoose;
+
+	while (true)
+	{
+		std::cout << "1 - 6.1 (one flight)\n"
+			<< "2 - 6.2(search the least time flight)\n"
+			<< "0 <- back" << std::endl;
+
+		userChoose = GetIntValue();
+		switch (userChoose)
+		{
+		case 1:
+		{
+			DemoDynamicFlight();
+				
+			system("pause");
+			break;
+		}
+		case 2:
+		{
+			DemoDynamicFligths();
+
 			system("pause");
 			break;
 		}

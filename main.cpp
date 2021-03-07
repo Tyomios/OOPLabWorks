@@ -7,7 +7,7 @@ enum class MenuList
 	CreatingStructures = 2,
 	StructsAndPointers = 3,
 	StructsAndFunctions = 4,
-	DynamicMemory = 5,
+	StructsAndMemory = 5,
 	Exit = 0
 };
 
@@ -20,7 +20,7 @@ int main()
 				<< "2 - 1.1.2(creating structures)\n"
 				<< "3 - 1.1.3(structs and pointers)\n"
 				<< "4 - 1.1.4(structs and functions)\n"
-				<< "5 - 1.1.5\n"
+				<< "5 - 1.1.5(structs and memory)\n"
 				<< "0 - Exit" << std::endl;
 
 			int userChoose = GetIntValue();
@@ -51,8 +51,9 @@ int main()
 				system("cls");
 				break;
 			}
-			case MenuList::DynamicMemory:
+			case MenuList::StructsAndMemory:
 			{
+				StructsAndMemoryMenu();
 				system("cls");
 				break;
 			}

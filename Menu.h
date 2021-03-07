@@ -5,6 +5,7 @@
 #include "CreatingStructures.h"
 #include "StructsAndPointers.h"
 #include "StructsAndFunctions.h"
+#include "StructsAndMemory.h"
 #include "Common.h"
 
 /// @brief Интерфейс для проверки заданий по обработке исключений
@@ -18,4 +19,8 @@ void StructsAndPointersMenu();
 
 /// @brief Интерфейс для проверки заданий по работе в функциях
 void StructsAndFunctionsMenu();
+
+/// @brief Интерфейс для проверки заданий по работе с динамической
+/// памятью
+void StructsAndMemoryMenu();
 #endif
