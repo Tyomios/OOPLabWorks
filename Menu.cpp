@@ -494,3 +494,68 @@ void ConstructorsMenu()
 		system("cls");
 	}
 }
+
+void EnumerateMenu()
+{
+	int userChoose;
+
+	while (true)
+	{
+			std::cout << "1 - 8.1 (create enum)\n"
+				<< "2 - 8.2(show color)\n"
+				<< "3 - 8.3(show color)\n"
+				<< "4 - 8.4(count color in array)\n"
+				<< "0 <- back" << std::endl;
+
+			userChoose = GetIntValue();
+			switch (userChoose)
+			{
+			case 1:
+			{
+				DemoEnums();
+				std::cout << "Enums were created successfully" << std::endl;
+				system("pause");
+				break;
+			}
+			case 2:
+			{
+				WriteColor(Yellow);
+
+				system("pause");
+				break;
+			}
+			case 3:
+				{
+				ReadColor();
+				system("pause");
+				break;
+				}
+			case 4:
+				{
+				Color* colors = new Color[5];
+				colors[0] = Yellow;
+				colors[1] = Red;
+				colors[2] = Red;
+				colors[3] = Blue;
+				colors[4] = Red;
+				std::cout << "Red count "
+						<< CountColor(colors, 5, Red)
+				<< std::endl;
+
+				delete[] colors;
+				system("pause");
+				break;
+				}
+			case 0:
+			{
+				system("cls");
+				return;
+			}
+			default:
+			{
+				std::cout << "Unknown command" << std::endl;
+			}
+			}
+		system("cls");
+	}
+}

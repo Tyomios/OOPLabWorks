@@ -60,3 +60,61 @@ void WriteColor(Color color)
 	}
 	
 }
+
+
+Color ReadColor()
+{
+	std::cout << "1 - Red\n 2 - Orange\n 3 - Yellow\n"
+		<< "4 - Green\n 5 - Purple" << std::endl;
+	int userColor = GetIntValue();
+
+	switch (userColor)
+	{
+	case 1:
+		{
+		return Red;
+		}
+	case 2:
+	{
+		return Orange;
+	}
+	case 3:
+	{
+		return Yellow;
+	}
+	case 4:
+	{
+		return Green;
+	}
+	case 5:
+	{
+		return Purple;
+	}
+	}
+}
+
+int CountRed(Color* colors, int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (colors[i] == Red)
+		{
+			++count;
+		}
+	}
+	return count;
+}
+
+int CountColor(Color* colors, int size, Color findedColor)
+{
+	int count = 0;
+	for (int i =0; i < size; i++)
+	{
+		if (colors[i] == findedColor)
+		{
+			++count;
+		}
+	}
+	return count;
+}

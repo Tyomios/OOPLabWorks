@@ -1,7 +1,10 @@
 #pragma once
 #ifndef _H_ENUMERATE_ACCB03
 #define _H_ENUMERATE_ACCB03
+#include "Common.h"
 #include <iostream>
+
+
 enum Color
 {
 	Red,
@@ -58,7 +61,27 @@ enum YearSeasons
 	Autumn
 };
 
+/// @brief 
 void DemoEnums();
 
+/// @brief 
+/// @param color 
 void WriteColor(Color color);
+
+/// @brief 
+/// @return 
+Color ReadColor();
+
+/// @brief 
+/// @param colors 
+/// @param size 
+/// @return 
+int CountRed(Color* colors, int size);
+
+/// @brief 
+/// @param color 
+/// @param size 
+/// @param findedColor 
+/// @return 
+int CountColor(Color* colors, int size, Color findedColor);
 #endif

@@ -7,6 +7,7 @@
 #include "StructsAndFunctions.h"
 #include "StructsAndMemory.h"
 #include "Constructors.h"
+#include "Enumerate.h"
 #include "Common.h"
 
 /// @brief Интерфейс для проверки заданий по обработке исключений
@@ -25,6 +26,9 @@ void StructsAndFunctionsMenu();
 /// памятью
 void StructsAndMemoryMenu();
 
-
+/// @brief 
 void ConstructorsMenu();
+
+/// @brief 
+void EnumerateMenu();
 #endif

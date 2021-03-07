@@ -9,6 +9,7 @@ enum class MenuList
 	StructsAndFunctions = 4,
 	StructsAndMemory = 5,
 	Constructors = 6,
+	Enums = 7,
 	Exit = 0
 };
 
@@ -23,6 +24,7 @@ int main()
 				<< "4 - 1.1.4(structs and functions)\n"
 				<< "5 - 1.1.5(structs and memory)\n"
 				<< "6 - 1.1.6(constructors)\n"
+				<< "7 - 1.1.7(enumerates)\n"
 				<< "0 - Exit" << std::endl;
 
 			int userChoose = GetIntValue();
@@ -62,6 +64,11 @@ int main()
 			case MenuList::Constructors:
 			{
 				ConstructorsMenu();
+				system("cls");
+			}
+			case MenuList::Enums:
+			{
+				EnumerateMenu();
 				system("cls");
 			}
 			case MenuList::Exit:
