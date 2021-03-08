@@ -465,8 +465,8 @@ void ConstructorsMenu()
 		}
 		case 2:
 		{
-			std::string filmName = "Batman";
-			std::string filmStyle = "Action";
+			std::string filmName = "Big boy";
+			Style filmStyle = Action;
 			CopyFilm(MakeFilm(filmName,120,2005,filmStyle,5.5));
 
 			std::string flightStart = "Moscow";
@@ -526,7 +526,27 @@ void EnumerateMenu()
 			}
 			case 3:
 				{
-				ReadColor();
+				Color color = ReadColor();
+					if (color == 0)
+					{
+						std::cout << "Red" << std::endl;
+					}
+					if (color == 1)
+					{
+						std::cout << "Orange" << std::endl;
+					}
+					if (color == 2)
+					{
+						std::cout << "Yellow" << std::endl;
+					}
+					if (color == 3)
+					{
+						std::cout << "Green" << std::endl;
+					}
+					if (color == 4)
+					{
+						std::cout << "Purple" << std::endl;
+					}
 				system("pause");
 				break;
 				}
@@ -556,6 +576,54 @@ void EnumerateMenu()
 				std::cout << "Unknown command" << std::endl;
 			}
 			}
+		system("cls");
+	}
+}
+
+void EnumsInStructuresMenu()
+{
+	int userChoose;
+
+	while (true)
+	{
+		std::cout << "1 - 9.1 (count movies)\n"
+			<< "2 - 9.2(find the best movie)\n"
+			<< "0 <- back" << std::endl;
+
+		userChoose = GetIntValue();
+		switch (userChoose)
+		{
+		case 1:
+		{
+			Film* films = DemoMovieWithGenre();
+			CountMoviesByGenre(films,3,Comedy);
+				
+			delete[] films;
+			system("pause");
+			break;
+		}
+		case 2:
+		{
+			Film* films = DemoMovieWithGenre();
+			std::cout << "The best comedy movie - ";
+			std::cout
+				<< FindBestFilm(films, 3, Comedy)->Name
+				<< std::endl;
+				
+			delete[] films;
+			system("pause");
+			break;
+		}
+		case 0:
+		{
+			system("cls");
+			return;
+		}
+		default:
+		{
+			std::cout << "Unknown command" << std::endl;
+		}
+		}
 		system("cls");
 	}
 }

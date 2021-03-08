@@ -68,7 +68,7 @@ Flight* CopyFlight(Flight* flight)
 }
 
 
-Film* MakeFilm(std::string& name, int time, int year, std::string& style, double rating)
+Film* MakeFilm(std::string& name, int time, int year, Style style, double rating)
 {
 	Film* film = new Film;
 	film->Name = name;

@@ -31,4 +31,7 @@ void ConstructorsMenu();
 
 /// @brief 
 void EnumerateMenu();
+
+/// @brief 
+void EnumsInStructuresMenu();
 #endif

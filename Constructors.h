@@ -2,6 +2,8 @@
 #ifndef _H_CONSTRUCTORS_BB2
 #define _H_CONSTRUCTORS_BB2
 #include "CreatingStructures.h"
+#include "EnumsInStructures.h"
+
 
 struct Circle
 {
@@ -69,7 +71,7 @@ Flight* CopyFlight(Flight* flight);
 /// @param rating Рейтинг
 /// 
 /// @return Проинициализированный обьект
-Film* MakeFilm(std::string& name, int time, int year, std::string& style, double rating);
+Film* MakeFilm(std::string& name, int time, int year, Style style, double rating);
 
 /// @brief Функция копирования структуры Film
 /// 

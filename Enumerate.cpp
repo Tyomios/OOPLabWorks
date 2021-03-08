@@ -23,6 +23,7 @@ void DemoEnums()
 	YearSeasons seasons[4] = { Summer, Spring, Autumn, Winter };
 }
 
+
 void WriteColor(Color color)
 {
 	switch (color)
@@ -93,6 +94,7 @@ Color ReadColor()
 	}
 }
 
+
 int CountRed(Color* colors, int size)
 {
 	int count = 0;
@@ -105,6 +107,7 @@ int CountRed(Color* colors, int size)
 	}
 	return count;
 }
+
 
 int CountColor(Color* colors, int size, Color findedColor)
 {

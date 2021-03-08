@@ -1,6 +1,7 @@
 #pragma once
 #ifndef _H_CREATINGSTRUCTURES_B0968
 #define _H_CREATINGSTRUCTURES_B0968
+#include "Enumerate.h"
 #include <string>
 
 
@@ -25,7 +26,7 @@ struct Film
 	std::string Name;
 	int TimeInMinutes;
 	int Year;
-	std::string Style;
+	Style Style;
 	double Rating;
 };
 

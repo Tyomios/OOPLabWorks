@@ -44,7 +44,7 @@ Film* DemoFilm(int size)
 		Film* move = new Film;
 		move->Name = "Cool Move";
 		move->Rating = 9.0;
-		move->Style = "Love story";
+		move->Style = Action;
 		move->TimeInMinutes = 190;
 		move->Year = 2007;
 			
@@ -64,9 +64,9 @@ Film* DemoFilm(int size)
 		move[2].Rating = 1.3;
 
 
-		move[0].Style = "Action";
-		move[1].Style = "Biography";
-		move[2].Style = "Live";
+		move[0].Style = Action;
+		move[1].Style = Comedy;
+		move[2].Style = Trailer;
 
 		move[0].TimeInMinutes = 134;
 		move[1].TimeInMinutes = 45;
