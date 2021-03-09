@@ -1,5 +1,6 @@
 #include "Enumerate.h"
 
+
 void DemoEnums()
 {
 	Color color = Red;
@@ -28,38 +29,37 @@ void WriteColor(Color color)
 {
 	switch (color)
 	{
-	case Red:
+		case Red:
 		{
 			std::cout  << "Red color" << std::endl;
 			break;
 		}
-	case Yellow:
+		case Yellow:
 		{
-		std::cout << "Yellow color" << std::endl;
-		break;
+			std::cout << "Yellow color" << std::endl;
+			break;
 		}
-	case Blue:
+		case Blue:
 		{
-		std::cout << "Blue color" << std::endl;
-		break;
+			std::cout << "Blue color" << std::endl;
+			break;
 		}
-	case Green:
+		case Green:
 		{
-		std::cout << "Green color" << std::endl;
-		break;
+			std::cout << "Green color" << std::endl;
+			break;
 		}
-	case Orange:
+		case Orange:
 		{
-		std::cout << "Orange color" << std::endl;
-		break;
+			std::cout << "Orange color" << std::endl;
+			break;
 		}
-	case Purple:
+		case Purple:
 		{
-		std::cout << "Purple color" << std::endl;
-		break;
+			std::cout << "Purple color" << std::endl;
+			break;
 		}
 	}
-	
 }
 
 
@@ -71,26 +71,26 @@ Color ReadColor()
 
 	switch (userColor)
 	{
-	case 1:
+		case 1:
 		{
-		return Red;
+			return Red;
 		}
-	case 2:
-	{
-		return Orange;
-	}
-	case 3:
-	{
-		return Yellow;
-	}
-	case 4:
-	{
-		return Green;
-	}
-	case 5:
-	{
-		return Purple;
-	}
+		case 2:
+		{
+			return Orange;
+		}
+		case 3:
+		{
+			return Yellow;
+		}
+		case 4:
+		{
+			return Green;
+		}
+		case 5:
+		{
+			return Purple;
+		}
 	}
 }
 

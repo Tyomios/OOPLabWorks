@@ -1,5 +1,6 @@
 #include "Common.h"
 
+
 int GetIntValue()
 {
 	int value;

@@ -17,4 +17,3 @@ void DemoDynamicFligths();
 /// @param size Размер массива
 void FindShortestFlight(Flight* flights, int size);
 #endif
-

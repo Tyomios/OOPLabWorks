@@ -35,7 +35,7 @@ void DemoDynamicFligths()
 	flights[2].TimeOfFlightMinutes = 105;
 
 	flights[3].StartPoint = "Moscow";
-	flights[3].EndPoint = "Barselone";
+	flights[3].EndPoint = "Barcelona";
 	flights[3].TimeOfFlightMinutes = 180;
 
 	for (int i = 0; i < 4; i++)

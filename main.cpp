@@ -19,7 +19,7 @@ int main()
 {
 	while (true)
 	{
-			std::cout << "1 - 1.1.1(exceptions)\n"
+		std::cout << "1 - 1.1.1(exceptions)\n"
 				<< "2 - 1.1.2(creating structures)\n"
 				<< "3 - 1.1.3(structs and pointers)\n"
 				<< "4 - 1.1.4(structs and functions)\n"
@@ -29,10 +29,10 @@ int main()
 				<< "8 - 1.1.8(enums in structures)\n"
 				<< "0 - Exit" << std::endl;
 
-			int userChoose = GetIntValue();
+		int userChoose = GetIntValue();
 
-			switch (static_cast<MenuList>(userChoose))
-			{
+		switch (static_cast<MenuList>(userChoose))
+		{
 			case MenuList::ExceptionTasks:
 			{
 				ExceprionMenu();
@@ -91,7 +91,7 @@ int main()
 				std::cout << "Unknown program." << std::endl;
 				system("pause");
 			}
-			}
-			system("cls");
 		}
+			system("cls");
+	}
 }

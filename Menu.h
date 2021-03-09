@@ -26,12 +26,15 @@ void StructsAndFunctionsMenu();
 /// памятью
 void StructsAndMemoryMenu();
 
-/// @brief 
+/// @brief Интерфейс для проверки заданий по созданию
+/// функций-конструкторов
 void ConstructorsMenu();
 
-/// @brief 
+/// @brief Интерфейс для проверки заданий по работе
+/// с перечислениями
 void EnumerateMenu();
 
-/// @brief 
+/// @brief Интерфейс для проверки заданий по работе
+/// со структурами, имеющими перечисления
 void EnumsInStructuresMenu();
 #endif

@@ -63,44 +63,73 @@ struct Subject
 };
 
 
+/// @brief Создание обьекта типа Rectangle
+/// 
+/// @param size размер массива
+/// 
+/// @return Указатель на первый (или единственный) элемент
 Rectangle* DemoRectangle(int size);
 
-
+/// @brief Создание обьекта типа Flight
+/// 
+/// @param size размер массива
+/// 
+/// @return Указатель на первый (или единственный) элемент
 Flight* DemoFlight(int size);
 
-
+/// @brief Создание обьекта типа Film
+/// 
+/// @param size размер массива
+/// 
+/// @return Указатель на первый (или единственный) элемент
 Film* DemoFilm(int size);
 
-
+/// @brief Создание обьекта типа Time
+/// 
+/// @param size размер массива
+///
+/// @return Указатель на первый (или единственный) элемент
 Time* DemoTime(int size);
 
-
+/// @brief Создание обьекта типа Contact
+/// 
+/// @param size размер массива
+/// 
+/// @return Указатель на первый (или единственный) элемент
 Contact* DemoContact(int size);
 
-
+/// @brief Создание обьекта типа Song
+/// 
+/// @param size размер массива
+/// 
+/// @return Указатель на первый (или единственный) элемент
 Song* DemoSong(int size);
 
-
+/// @brief Создание обьекта типа Subject
+/// 
+/// @param size размер массива
+/// 
+/// @return Указатель на первый (или единственный) элемент
 Subject* DemoSubject(int size);
 
-
+/// @brief Получение данных для структуры Rectangle
 void DemoRectangleInput();
 
-
+/// @brief Получение данных для структуры Flight
 void DemoFlightInput();
 
-
+/// @brief Получение данных для структуры Film
 void DemoFilmInput();
 
-
+/// @brief Получение данных для структуры Time
 void DemoTimeInput();
 
-
+/// @brief Получение данных для структуры Contact
 void DemoContactInput();
 
-
+/// @brief Получение данных для структуры Song
 void DemoSongInput();
 
-
+/// @brief Получение данных для структуры Subject
 void DemoSubjectInput();
 #endif
