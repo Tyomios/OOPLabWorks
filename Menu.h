@@ -16,6 +16,9 @@ void ExceprionMenu();
 /// @brief Интерфейс для проверки заданий по создаию структур
 void CreatingStructureMenu();
 
+/// @brief Интерфейс для проверки заданий по создаию структур
+void CreatingStructuresMenuAddon();
+
 /// @brief Интерфейс для проверки заданий по работе с указателями 
 void StructsAndPointersMenu();
 

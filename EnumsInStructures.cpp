@@ -44,17 +44,16 @@ int CountMoviesByGenre(Film* films, int size, Style style)
 
 Film* FindBestFilm(Film* films, int size, Style style)
 {
-	Film bestFilm;
-	bestFilm.Rating = 0.0;
+	Film* bestFilm = films;
 	for (int i = 0; i < size; i++)
 	{
 		if (films[i].Style == style)
 		{
-			if (films[i].Rating > bestFilm.Rating)
+			if (films[i].Rating > bestFilm->Rating)
 			{
-				bestFilm = films[i];
+				bestFilm = &films[i];
 			}
 		}
 	}
-	return &bestFilm;
+	return bestFilm;
 }

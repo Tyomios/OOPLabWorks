@@ -92,6 +92,6 @@ int main()
 				system("pause");
 			}
 		}
-			system("cls");
+	system("cls");
 	}
 }
