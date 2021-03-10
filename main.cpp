@@ -17,6 +17,7 @@ enum class MenuList
 
 int main()
 {
+	//TODO: В методе main нужно вызывать одну функцию. То есть все это меню перенести в отдельный файл
 	while (true)
 	{
 		std::cout << "1 - 1.1.1(exceptions)\n"

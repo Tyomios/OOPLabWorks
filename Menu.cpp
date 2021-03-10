@@ -119,6 +119,7 @@ void CreatingStructuresMenuAddon()
 		{
 			case 1:
 			{
+				//TODO: Утечка памяти
 				Rectangle* rectangle = DemoRectangle(1);
 				std::cout << "Color: " << rectangle->Color
 					<< " parameters: " << rectangle->Length << "x" << rectangle->Width
@@ -162,6 +163,7 @@ void CreatingStructuresMenuAddon()
 			}
 			case 2:
 			{
+				//TODO: Отсутствует проверка на входные значения. При ошибке ввода в одном методе, вылетают все последующие
 				DemoContactInput();
 				DemoFilmInput();
 				DemoFlightInput();
@@ -175,6 +177,7 @@ void CreatingStructuresMenuAddon()
 			}
 			case 3:
 			{
+				//TODO: Утечка памяти
 				Contact* contact = DemoContact(3);
 				for (int i = 0; i < 3; i++)
 				{
@@ -260,7 +263,7 @@ void CreatingStructuresMenuAddon()
 		}
 	}
 }
-
+//TODO: Лишние пустые строки
 
 
 void StructsAndPointersMenu()
@@ -280,6 +283,7 @@ void StructsAndPointersMenu()
 		{
 			case 1:
 			{
+				//TODO: Утечка памяти
 				Rectangle* rectangle = DemoRectangle(1);
 				std::cout << "Color: " << rectangle->Color
 					<< " parameters: " << rectangle->Length << "x" << rectangle->Width
@@ -309,7 +313,7 @@ void StructsAndPointersMenu()
 			}
 			case 3:
 			{
-				
+				//TODO:Пустой кейс, нужно удалить
 			}
 			case 4:
 			{

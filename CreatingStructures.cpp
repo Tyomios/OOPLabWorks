@@ -41,6 +41,7 @@ Film* DemoFilm(int size)
 	{
 		case 1:
 		{
+			//Если переменная обозначает фильм, то на английском это слово пишется иначе
 			Film* move = new Film;
 			move->Name = "Cool Move";
 			move->Rating = 9.0;
@@ -53,7 +54,7 @@ Film* DemoFilm(int size)
 		case 3:
 		{
 			Film* move = new Film[3];
-
+			//TODO: Расстояние между частями кода внутри метода - не более одной строки
 
 			move[0].Name = "Wave";
 			move[1].Name = "Fastest horse";

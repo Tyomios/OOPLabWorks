@@ -10,6 +10,7 @@ void WriteRectangle(Rectangle& rectangle)
 
 void ReadRectangle(Rectangle& rectangle)
 {
+	//TODO:Необходима проверка на отрицательные числа
 	std::cout << "Enter rectangle's length" << std::endl;
 	rectangle.Length = GetDoubleValue();
 
@@ -49,6 +50,7 @@ void Exchange(Rectangle& firstRectangle, Rectangle& secondRectangle)
 
 void FindRectangle(Rectangle* rectangles, int count)
 {
+	//TODO: Утечка памяти
 	Rectangle* maxRectangle = new Rectangle;
 	for (int i = 0; i < count; i++)
 	{
@@ -65,6 +67,7 @@ void FindRectangle(Rectangle* rectangles, int count)
 
 void FindMaxRectangle(Rectangle* rectangles, int count)
 {
+	//TODO: Утечка памяти
 	Rectangle* maxRectangle = new Rectangle;
 	for (int i = 0; i < count; i++)
 	{
