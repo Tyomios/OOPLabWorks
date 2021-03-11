@@ -9,10 +9,10 @@ Contact* DemoContact(int size)
 	{
 		case 1:
 		{
-			Contact* phone = new Contact;
-			phone->IsFavorite = true;
-			phone->Name = "Honne";
-			phone->Number = "07321";
+			Contact* phone = new Contact[1];
+			phone[0].IsFavorite = true;
+			phone[0].Name = "Honne";
+			phone[0].Number = "07321";
 			return phone;
 		}
 		case 3:
@@ -77,6 +77,8 @@ Film* DemoFilm(int size)
 			movie[2].Year = 2020;
 				
 			return movie;
+
+			
 		}
 	}
 }

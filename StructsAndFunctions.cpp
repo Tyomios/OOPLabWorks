@@ -60,17 +60,20 @@ void Exchange(Rectangle& firstRectangle, Rectangle& secondRectangle)
 void FindRectangle(Rectangle* rectangles, int count)
 {
 	//TODO: Утечка памяти+
+	//TODO: повреждение данных +
 	Rectangle* maxRectangle = new Rectangle;
+	int index = 0;
 	for (int i = 0; i < count; i++)
 	{
 		if (rectangles[i].Length > maxRectangle->Length)
 		{
-			maxRectangle = &rectangles[i];
+			maxRectangle->Length = rectangles[i].Length;
+			index = i;
 		}
 	}
 
-	std::cout << "The biggest rectangle's length "
-		<< "are " << maxRectangle->Length << "x" << maxRectangle->Width
+	std::cout << "The biggest rectangle's parameters "
+		<< "are " << rectangles[index].Length << "x" << rectangles[index].Width
 		<< std::endl;
 
 	delete maxRectangle;
@@ -79,18 +82,24 @@ void FindRectangle(Rectangle* rectangles, int count)
 void FindMaxRectangle(Rectangle* rectangles, int count)
 {
 	//TODO: Утечка памяти+
+	//TODO: см. выше
 	Rectangle* maxRectangle = new Rectangle;
+	maxRectangle->Length = rectangles[0].Length;
+	maxRectangle->Width = rectangles[0].Width;
+	int index = 0;
 	for (int i = 0; i < count; i++)
 	{
 		if ((rectangles[i].Length * rectangles[i].Width) 
 				> (maxRectangle->Length * maxRectangle->Width))
 		{
-			maxRectangle = &rectangles[i];
+			maxRectangle->Length = rectangles[i].Length;
+			maxRectangle->Width = rectangles[i].Width;
+			index = i;
 		}
 	}
 
 	std::cout << "The biggest rectangle's square "
-		<< "are " << maxRectangle->Length * maxRectangle->Width
+		<< "is " << rectangles[index].Length * rectangles[index].Width
 		<< std::endl;
 	
 	delete maxRectangle;
