@@ -41,43 +41,42 @@ Film* DemoFilm(int size)
 	{
 		case 1:
 		{
-			//Если переменная обозначает фильм, то на английском это слово пишется иначе
-			Film* move = new Film;
-			move->Name = "Cool Move";
-			move->Rating = 9.0;
-			move->Style = Action;
-			move->TimeInMinutes = 190;
-			move->Year = 2007;
+			//Если переменная обозначает фильм, то на английском это слово пишется иначе +
+			Film* movie = new Film;
+			movie->Name = "Cool Move";
+			movie->Rating = 9.0;
+			movie->Style = Action;
+			movie->TimeInMinutes = 190;
+			movie->Year = 2007;
 				
-			return move;
+			return movie;
 		}
 		case 3:
 		{
-			Film* move = new Film[3];
-			//TODO: Расстояние между частями кода внутри метода - не более одной строки
+			Film* movie = new Film[3];
+			//TODO: Расстояние между частями кода внутри метода - не более одной строки+
+			movie[0].Name = "Wave";
+			movie[1].Name = "Fastest horse";
+			movie[2].Name = "City live";
 
-			move[0].Name = "Wave";
-			move[1].Name = "Fastest horse";
-			move[2].Name = "City live";
-
-			move[0].Rating = 4.3;
-			move[1].Rating = 5.7;
-			move[2].Rating = 1.3;
+			movie[0].Rating = 4.3;
+			movie[1].Rating = 5.7;
+			movie[2].Rating = 1.3;
 
 
-			move[0].Style = Action;
-			move[1].Style = Comedy;
-			move[2].Style = Trailer;
+			movie[0].Style = Action;
+			movie[1].Style = Comedy;
+			movie[2].Style = Trailer;
 
-			move[0].TimeInMinutes = 134;
-			move[1].TimeInMinutes = 45;
-			move[2].TimeInMinutes = 25;
+			movie[0].TimeInMinutes = 134;
+			movie[1].TimeInMinutes = 45;
+			movie[2].TimeInMinutes = 25;
 
-			move[0].Year = 2012;
-			move[1].Year = 2015;
-			move[2].Year = 2020;
+			movie[0].Year = 2012;
+			movie[1].Year = 2015;
+			movie[2].Year = 2020;
 				
-			return move;
+			return movie;
 		}
 	}
 }
@@ -157,14 +156,14 @@ Song* DemoSong(int size)
 	switch (size)
 	{
 		case 1:
-			{
+		{
 			Song* song = new Song;
 			song->CountingInSeconds = 216;
 			song->IsFavorite = false;
 			song->Name = "IDK";
 
 			return song;
-			}
+		}
 		case 3:
 		{
 			Song* song = new Song[3];

@@ -10,12 +10,21 @@ void WriteRectangle(Rectangle& rectangle)
 
 void ReadRectangle(Rectangle& rectangle)
 {
-	//TODO:Необходима проверка на отрицательные числа
+	//TODO:Необходима проверка на отрицательные числа+
 	std::cout << "Enter rectangle's length" << std::endl;
 	rectangle.Length = GetDoubleValue();
-
-	std::cout << "Enter rectangle's widgth" << std::endl;
+	if (rectangle.Length < 0)
+	{
+		std::cout << "Length can't be less than zero!" << std::endl;
+		ReadRectangle(rectangle);
+	}
+	std::cout << "Enter rectangle's width" << std::endl;
 	rectangle.Width= GetDoubleValue();
+	while (rectangle.Width < 0)
+	{
+		std::cout << "Width can't be less than zero!" << std::endl;
+		rectangle.Width = GetDoubleValue();
+	}
 }
 
 
@@ -50,7 +59,7 @@ void Exchange(Rectangle& firstRectangle, Rectangle& secondRectangle)
 
 void FindRectangle(Rectangle* rectangles, int count)
 {
-	//TODO: Утечка памяти
+	//TODO: Утечка памяти+
 	Rectangle* maxRectangle = new Rectangle;
 	for (int i = 0; i < count; i++)
 	{
@@ -63,11 +72,13 @@ void FindRectangle(Rectangle* rectangles, int count)
 	std::cout << "The biggest rectangle's length "
 		<< "are " << maxRectangle->Length << "x" << maxRectangle->Width
 		<< std::endl;
+
+	delete maxRectangle;
 }
 
 void FindMaxRectangle(Rectangle* rectangles, int count)
 {
-	//TODO: Утечка памяти
+	//TODO: Утечка памяти+
 	Rectangle* maxRectangle = new Rectangle;
 	for (int i = 0; i < count; i++)
 	{
@@ -81,4 +92,6 @@ void FindMaxRectangle(Rectangle* rectangles, int count)
 	std::cout << "The biggest rectangle's square "
 		<< "are " << maxRectangle->Length * maxRectangle->Width
 		<< std::endl;
+	
+	delete maxRectangle;
 }

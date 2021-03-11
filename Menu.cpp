@@ -44,6 +44,7 @@ void ExceprionMenu()
 	}
 }
 
+
 void CreatingStructureMenu()
 {
 	int userChoose;
@@ -119,7 +120,7 @@ void CreatingStructuresMenuAddon()
 		{
 			case 1:
 			{
-				//TODO: Утечка памяти
+				//TODO: Утечка памяти +
 				Rectangle* rectangle = DemoRectangle(1);
 				std::cout << "Color: " << rectangle->Color
 					<< " parameters: " << rectangle->Length << "x" << rectangle->Width
@@ -157,7 +158,14 @@ void CreatingStructuresMenuAddon()
 					<< time->Minutes << ":"
 					<< time->Seconds
 					<< std::endl;
-
+					
+				delete rectangle;
+				delete film;
+				delete flight;
+				delete contact;
+				delete song;
+				delete subject;
+				delete time;
 				system("pause");
 				break;
 			}
@@ -177,14 +185,15 @@ void CreatingStructuresMenuAddon()
 			}
 			case 3:
 			{
-				//TODO: Утечка памяти
+				//TODO: Утечка памяти +
 				Contact* contact = DemoContact(3);
 				for (int i = 0; i < 3; i++)
 				{
 					std::cout << "Name: " << contact[i].Name << " - " << contact[i].Number << std::endl;
 				}
 				std::cout << std::endl;
-
+				delete[] contact;
+					
 				Film* film = DemoFilm(3);
 				for (int i = 0; i < 3; i++)
 				{
@@ -194,7 +203,8 @@ void CreatingStructuresMenuAddon()
 						<< "Year: " << film[i].Year << std::endl;
 				}
 				std::cout << std::endl;
-
+				delete[] film;
+					
 				Flight* flight = DemoFlight(3);
 				for (int i = 0; i < 3; i++)
 				{
@@ -204,7 +214,8 @@ void CreatingStructuresMenuAddon()
 						<< std::endl;
 				}
 				std::cout << std::endl;
-
+				delete[] flight;
+					
 				Rectangle* rectangle = DemoRectangle(3);
 				for (int i = 0; i < 3; i++)
 				{
@@ -214,7 +225,8 @@ void CreatingStructuresMenuAddon()
 						<< std::endl;
 				}
 				std::cout << std::endl;
-
+				delete[] rectangle;
+					
 				Song* song = DemoSong(3);
 				for (int i = 0; i < 3; i++)
 				{
@@ -224,7 +236,8 @@ void CreatingStructuresMenuAddon()
 						<< std::endl;
 				}
 				std::cout << std::endl;
-
+				delete[] song;
+					
 				Subject* subject = DemoSubject(3);
 				for (int i = 0; i < 3; i++)
 				{
@@ -234,7 +247,8 @@ void CreatingStructuresMenuAddon()
 						<< std::endl;
 				}
 				std::cout << std::endl;
-
+				delete[] subject;
+					
 				Time* time = DemoTime(3);
 				for (int i = 0; i < 3; i++)
 				{
@@ -244,7 +258,8 @@ void CreatingStructuresMenuAddon()
 						<< std::endl;
 				}
 				std::cout << std::endl;
-
+				delete[] time;
+					
 				std::cout << "All works great" << std::endl;
 				system("pause");
 				break;
@@ -263,8 +278,7 @@ void CreatingStructuresMenuAddon()
 		}
 	}
 }
-//TODO: Лишние пустые строки
-
+//TODO: Лишние пустые строки +
 
 void StructsAndPointersMenu()
 {
@@ -274,8 +288,7 @@ void StructsAndPointersMenu()
 	{
 		std::cout << "1 - 3.1 (use pointer with structure)\n"
 			<< "2 - 3.2(two equal pointers for rectangle)\n"
-			<< "3 - 3.3(two equal pointers for other structures)\n"
-			<< "4 - 3.4(wrong pointers see comments in code)\n"
+			<< "3 - 3.3(wrong pointers see comments in code)\n"
 			<< "0 <- back" << std::endl;
 
 		userChoose = GetIntValue();
@@ -283,7 +296,7 @@ void StructsAndPointersMenu()
 		{
 			case 1:
 			{
-				//TODO: Утечка памяти
+				//TODO: Утечка памяти +
 				Rectangle* rectangle = DemoRectangle(1);
 				std::cout << "Color: " << rectangle->Color
 					<< " parameters: " << rectangle->Length << "x" << rectangle->Width
@@ -296,6 +309,7 @@ void StructsAndPointersMenu()
 					<< " parameters: " << rectangle->Length << "x" << rectangle->Width
 					<< std::endl;
 
+				delete rectangle;
 				system("pause");
 				break;
 			}
@@ -312,10 +326,6 @@ void StructsAndPointersMenu()
 				break;
 			}
 			case 3:
-			{
-				//TODO:Пустой кейс, нужно удалить
-			}
-			case 4:
 			{
 				WrongPointers();
 				std::cout << "All works good" << std::endl;
