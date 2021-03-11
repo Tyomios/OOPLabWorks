@@ -12,7 +12,7 @@ Contact* DemoContact(int size)
 			Contact* phone = new Contact;
 			phone->IsFavorite = true;
 			phone->Name = "Honne";
-			phone->Number = 07321;
+			phone->Number = "07321";
 			return phone;
 		}
 		case 3:
@@ -20,15 +20,15 @@ Contact* DemoContact(int size)
 			Contact* phone = new Contact[3];
 			phone[0].IsFavorite = true;
 			phone[0].Name = "Bobby";
-			phone[0].Number = 833659;
+			phone[0].Number = "833659";
 
 			phone[1].IsFavorite = true;
 			phone[1].Name = "Lobby Manager";
-			phone[1].Number = 34493;
+			phone[1].Number = "34493";
 
 			phone[2].IsFavorite = false;
 			phone[2].Name = "Worst worker";
-			phone[2].Number = 4556;
+			phone[2].Number = "4556";
 			return phone;
 		}
 	}
@@ -226,11 +226,20 @@ void DemoRectangleInput()
 	Rectangle rectangle;
 
 	std::cout << "Enter rectangle's length:" << std::endl;
-	std::cin >> rectangle.Length;
+	rectangle.Length = GetDoubleValue();
+	while (rectangle.Length < 0)
+	{
+		std::cout << "Length can't be less than zero" << std::endl;
+		rectangle.Length = GetDoubleValue();
+	}
 
 	std::cout << "Enter rectangle's weight:" << std::endl;
-	std::cin >> rectangle.Width;
-
+	rectangle.Width = GetDoubleValue();
+	while (rectangle.Width < 0)
+	{
+		rectangle.Width = GetDoubleValue();
+	}
+	
 	std::cout	<< "Rectangle's parameters:" << rectangle.Length << "x" << rectangle.Width
 				<< std::endl;
 }
@@ -259,7 +268,7 @@ void DemoFilmInput()
 	std::cin >> film.Name;
 
 	std::cout << "Enter move's year:" << std::endl;
-	std::cin >> film.Year;
+	film.Year = GetIntValue();
 
 	std::cout << "Film " << film.Name << " was ready in " << film.Year << std::endl;
 }
@@ -270,13 +279,13 @@ void DemoTimeInput()
 	Time time;
 
 	std::cout << "Enter time hours:" << std::endl;
-	std::cin >> time.Hours;
+	time.Hours = GetIntValue();
 
 	std::cout << "Enter time minutes:" << std::endl;
-	std::cin >> time.Minutes;
+	time.Minutes = GetIntValue();
 
 	std::cout << "Enter time seconds:" << std::endl;
-	std::cin >> time.Seconds;
+	time.Seconds = GetIntValue();
 
 	std::cout << "Time: " << time.Hours << ":"
 			<< time.Minutes << ":" << time.Seconds << std::endl;
@@ -304,7 +313,7 @@ void DemoSongInput()
 	std::cin >> song.Name;
 
 	std::cout << "Enter song's counting in seconds: " << std::endl;
-	std::cin >> song.CountingInSeconds;
+	song.CountingInSeconds = GetIntValue();
 
 	std::cout	<< "Song - " << song.Name
 				<< "\ncontinuing: " << (song.CountingInSeconds / 60)
@@ -320,7 +329,7 @@ void DemoSubjectInput()
 	std::cin >> subject.Name;
 
 	std::cout << "Enter subject's mark: " << std::endl;
-	std::cin >> subject.Mark;
+	subject.Mark = GetIntValue();
 	
 	std::cout << "Subject: " << subject.Name
 			<< "\nMark: " << subject.Mark << std::endl;

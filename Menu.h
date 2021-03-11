@@ -40,4 +40,7 @@ void EnumerateMenu();
 /// @brief Интерфейс для проверки заданий по работе
 /// со структурами, имеющими перечисления
 void EnumsInStructuresMenu();
+
+/// @brief Интерфейс для выбора заданий 
+void LabWorkMenu();
 #endif
