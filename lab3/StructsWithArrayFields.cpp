@@ -25,6 +25,7 @@ void DemoBook()
 		return;
 	}
 	WriteBookToConsole(books[foundBook]);
+	delete[] books;
 }
 
 
@@ -84,16 +85,97 @@ void WriteBookToConsole(Book& book)
 
 int FindBookByAuthor(Book* books, int booksCount, std::string author)
 {
-	int bookIndex = -1;
+	int bookNotFound = -1;
 	for (int i = 0; i < booksCount; i++)
 	{
 		for (int j = 0; j < books[i].AuthorsCount; j++)
 		{
 			if (books[i].Authors[j] == author)
 			{
-				bookIndex = i;
+				 return i;
 			}
 		}
 	}
-	return bookIndex;
+	return bookNotFound;
+}
+
+
+void ReadRouteFromConsole(Route& route)
+{
+	std::cout << "Enter route's number: " << std::endl;
+	route.Number = GetIntValue();
+
+	std::cout << "Enter route's continuing in minutes: " << std::endl;
+	route.ContinuingInMinutes = GetIntValue();
+	
+	std::cout << "Enter route's interval: " << std::endl;
+	route.Interval = GetIntValue();
+
+	std::cout << "Enter number of halts: " << std::endl;
+	route.HaltCount = GetIntValue();
+
+	for (int i = 0; i < route.HaltCount; i++)
+	{
+		std::cout << "Enter halt " << i + 1 << ": " << std::endl;
+		std::cin >> route.Halts[i];
+	}
+}
+
+
+void WriteRouteToConsole(Route& route)
+{
+	std::cout << "Route's number - "<< route.Number << "\n"
+	<< "Interval: " << route.Interval << "\n"
+	<< "Continuing: " << route.ContinuingInMinutes << "\n"
+	"Halts: ";
+	for (int i = 0; i < route.HaltCount; i++)
+	{
+		std::cout << route.Halts[i] << " - ";
+	}
+	std::cout << std::endl;
+}
+
+
+int FindRouteTo(Route* routes, int routesCount, std::string halt)
+{
+	int indexNotFound = -1;
+	for (int i = 0; i < routesCount; i++)
+	{
+		for (int j = 0; j < routes[i].HaltCount; j++)
+		{
+			if (routes[i].Halts[j] == halt)
+			{
+				return i;
+			}
+		}
+	}
+	return indexNotFound;
+}
+
+
+void DemoRoute()
+{
+	Route routes[3];
+	for (int i = 0; i < 3; i++)
+	{
+		std::cout << i + 1 << " route:" << std::endl;
+		ReadRouteFromConsole(routes[i]);
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		WriteRouteToConsole(routes[i]);
+	}
+	std::cout << "Enter halt for search:" << std::endl;
+	std::string searchHalt;
+	std::cin >> searchHalt;
+	int foundRoute = FindRouteTo(routes, 3, searchHalt);
+	if (foundRoute == -1)
+	{
+		std::cout << "Route to "
+			<< "'" << searchHalt << "'" << "not found"
+			<< std::endl;
+		return;
+	}
+	WriteRouteToConsole(routes[foundRoute]);
+	delete[] routes;
 }

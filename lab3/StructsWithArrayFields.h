@@ -16,7 +16,17 @@ struct Book
 	std::string* Authors = new std::string[AuthorsCount];
 };
 
-/// @brief Обьявление обьекта структуры Book
+
+struct Route
+{
+	int Number;
+	int ContinuingInMinutes;
+	int Interval;
+	int HaltCount;
+	std::string* Halts = new std::string[HaltCount];
+};
+
+/// @brief Работа со структурой Book
 void DemoBook();
 
 /// @brief Чтение полей структуры Book с клавиатуры
@@ -38,4 +48,27 @@ void WriteBookToConsole(Book& book);
 /// @retval -1 Не нашлось ни одной книги с указанным автором
 /// @return Индекс первой найденной книги с подходящим автором
 int FindBookByAuthor(Book* books, int booksCount, std::string author);
+
+/// @brief Инициализация полей структуры через консоль
+/// 
+/// @param route Инициализируеммый обьект
+void ReadRouteFromConsole(Route& route);
+
+/// @brief Вывод данных обьекта на экран
+/// 
+/// @param route Обьект типа Route
+void WriteRouteToConsole(Route& route);
+
+/// @brief Поиск маршрута до указанного пункта
+/// 
+/// @param routes Массив маршрутов
+/// @param routesCount Количество маршрутов
+/// @param halt Искомое место
+///
+/// @retval -1 Маршрут с указанным местом не найден
+/// @return Индекс маршрута с искомым местом
+int FindRouteTo(Route* routes, int routesCount, std::string halt);
+
+/// @brief Работа со структурой Route 
+void DemoRoute();
 #endif
