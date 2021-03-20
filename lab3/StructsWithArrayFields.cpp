@@ -3,13 +3,28 @@
 
 void DemoBook()
 {
-	Book book;
-	book.Name = "Kafka on the beach";
-	book.Year = 2002;
-	book.PagesCount = 719;
-	book.AuthorsCount = 2;
-	book.Authors[0] = "Haruki Murakami";
-	book.Authors[1] = "Another author";
+	Book books[3];
+	for (int i = 0; i < 3; i++)
+	{
+		std::cout << i + 1 << " book:" << std::endl;
+		ReadBookFromConsole(books[i]);
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		WriteBookToConsole(books[i]);
+	}
+	std::cout << "Enter author's name for search:" << std::endl;
+	std::string searchAuthor;
+	std::cin >> searchAuthor;
+	int foundBook = FindBookByAuthor(books, 3, searchAuthor);
+	if (foundBook == -1 )
+	{
+		std::cout << "Book with author "
+			<< "'" << searchAuthor << "'" << "not found"
+			<< std::endl;
+		return;
+	}
+	WriteBookToConsole(books[foundBook]);
 }
 
 
@@ -64,4 +79,21 @@ void WriteBookToConsole(Book& book)
 				<< book.Year << ". - "
 				<< book.PagesCount << " pages"
 				<< std::endl;
+}
+
+
+int FindBookByAuthor(Book* books, int booksCount, std::string author)
+{
+	int bookIndex = -1;
+	for (int i = 0; i < booksCount; i++)
+	{
+		for (int j = 0; j < books[i].AuthorsCount; j++)
+		{
+			if (books[i].Authors[j] == author)
+			{
+				bookIndex = i;
+			}
+		}
+	}
+	return bookIndex;
 }
