@@ -3,7 +3,7 @@
 
 void DemoBook()
 {
-	Book books[3];
+	Book* books = new Book[3];
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << i + 1 << " book:" << std::endl;
@@ -155,7 +155,7 @@ int FindRouteTo(Route* routes, int routesCount, std::string halt)
 
 void DemoRoute()
 {
-	Route routes[3];
+	Route* routes = new Route[3];
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << i + 1 << " route:" << std::endl;

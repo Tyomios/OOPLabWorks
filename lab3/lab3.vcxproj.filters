@@ -24,12 +24,24 @@
     <ClCompile Include="Common.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Aggregation.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StructsWithArrayFields.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Common.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Aggregation.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,7 +12,7 @@ struct Book
 	std::string Name;
 	int Year;
 	int PagesCount;
-	int AuthorsCount;
+	int AuthorsCount = 10;
 	std::string* Authors = new std::string[AuthorsCount];
 };
 
@@ -22,7 +22,7 @@ struct Route
 	int Number;
 	int ContinuingInMinutes;
 	int Interval;
-	int HaltCount;
+	int HaltCount = 10;
 	std::string* Halts = new std::string[HaltCount];
 };
 

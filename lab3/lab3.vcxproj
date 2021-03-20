@@ -139,12 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Aggregation.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="StructsWithArrayFields.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Aggregation.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="StructsWithArrayFields.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

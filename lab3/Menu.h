@@ -1,0 +1,11 @@
+#pragma once
+#ifndef _H_MENU_1234B_
+#define _H_MENU_1234B_
+#include "StructsWithArrayFields.h"
+
+/// @brief Интерфейс для выбора заданий для проверки
+void ResearchWorkMenu();
+
+/// @brief Интерфейс для проверки заданий по структурам
+void StructsWithArrayFieldsMenu();
+#endif
