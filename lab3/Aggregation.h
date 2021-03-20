@@ -3,21 +3,68 @@
 #define _H_AGGREGATION_DBD09_
 #include "Common.h"
 
-
+/// @brief Точка
 struct Point
 {
+	/// @brief координата X
 	double X;
+	/// @brief координата Y
 	double Y;
 };
 
-
+/// @brief Прямоугольник 
 struct Rectangle
 {
+	/// @brief Длина 
 	int Length;
+	/// @brief Ширина
 	int Width;
+	/// @brief Центр
 	Point Centre;
 };
 
+/// @brief Время 
+struct Time
+{
+	/// @brief Год
+	int Year;
+	/// @brief Месяц
+	int Month;
+	/// @brief День
+	int Day;
+	/// @brief Час
+	int Hour;
+	/// @brief Минуты
+	int Minutes;
+};
+
+/// @brief 
+/// @param time 
+void SetYear(Time& time);
+
+/// @brief 
+/// @param time 
+void SetMonth(Time& time);
+
+/// @brief 
+/// @param time 
+void SetDay(Time& time);
+
+/// @brief 
+/// @param time 
+void SetHour(Time& time);
+
+/// @brief 
+/// @param time 
+void SetMinutes(Time& time);
+
+/// @brief 
+/// @param time 
+void SetMinutes(Time& time);
+
+/// @brief 
+/// @return 
+Time* MakeTime();
 
 /// @brief Сеттер для параметра X
 /// 

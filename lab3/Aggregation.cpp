@@ -1,5 +1,67 @@
 #include "Aggregation.h"
 
+void SetYear(Time& time)
+{
+	time.Year = GetIntValue();
+	while (time.Year < 0)
+	{
+		std::cout << "Error. Year can't be less, than zero" << std::endl;
+		time.Year = GetIntValue();
+	}
+}
+
+void SetMonth(Time& time)
+{
+	time.Month = GetIntValue();
+	while (time.Month < 0 || time.Month > 12)
+	{
+		std::cout << "Error. Repeat entering a month" << std::endl;
+		time.Month = GetIntValue();
+	}
+}
+
+void SetDay(Time& time)
+{
+	time.Day = GetIntValue();
+	while (time.Day < 0 || time.Day > 30)
+	{
+		std::cout << "Error. Repeat entering a day" << std::endl;
+		time.Day = GetIntValue();
+	}
+}
+
+void SetHour(Time& time)
+{
+	time.Hour = GetIntValue();
+	while (time.Hour < 0 || time.Hour > 24)
+	{
+		std::cout << "Error. Repeat entering an hour" << std::endl;
+		time.Hour = GetIntValue();
+	}
+}
+
+void SetMinutes(Time& time)
+{
+	time.Minutes = GetIntValue();
+	while (time.Minutes < 0 || time.Minutes > 60)
+	{
+		std::cout << "Error. Repeat entering minutes" << std::endl;
+		time.Minutes = GetIntValue();
+	}
+}
+
+Time* MakeTime()
+{
+	Time* time = new Time;
+	SetYear(*time);
+	SetMonth(*time);
+	SetDay(*time);
+	SetHour(*time);
+	SetMinutes(*time);
+
+	return time;
+}
+
 void SetX(Point& point)
 {
 	point.X = GetDoubleValue();
