@@ -1,5 +1,189 @@
 #include "Aggregation.h"
 
+Flight* MakeFlight()
+{
+	Flight* flight = new Flight;
+	SetName(*flight);
+	SetStartPoint(*flight);
+	SetEndPoint(*flight);
+	SetDepartureTime(*flight);
+	SetArrivalTime(*flight);
+
+	return flight;
+}
+
+void DemoFlightTime()
+{
+	Flight flights[5];
+	flights[0].Name = "TU25";
+	flights[0].StartPoint = "Tomsk";
+	flights[0].EndPoint = "Moscow";
+	flights[0].DepartureTime.Month = 4;
+	flights[0].DepartureTime.Day = 15;
+	flights[0].DepartureTime.Hour = 19;
+	flights[0].DepartureTime.Minutes = 30;
+	flights[0].ArrivalTime.Month = 4;
+	flights[0].ArrivalTime.Day = 16;
+	flights[0].ArrivalTime.Hour = 1;
+	flights[0].ArrivalTime.Minutes = 14;
+	
+	flights[1].Name = "TR04";
+	flights[1].StartPoint = "Tomsk";
+	flights[1].EndPoint = "Novosibirsk";
+	flights[1].DepartureTime.Month = 9;
+	flights[1].DepartureTime.Day = 15;
+	flights[1].DepartureTime.Hour = 13;
+	flights[1].DepartureTime.Minutes = 30;
+	flights[1].ArrivalTime.Month = 9;
+	flights[1].ArrivalTime.Day = 15;
+	flights[1].ArrivalTime.Hour = 14;
+	flights[1].ArrivalTime.Minutes = 10;
+
+	flights[2].Name = "TAA04";
+	flights[2].StartPoint = "Kazan";
+	flights[2].EndPoint = "Novosibirsk";
+	flights[2].DepartureTime.Month = 11;
+	flights[2].DepartureTime.Day = 20;
+	flights[2].DepartureTime.Hour = 17;
+	flights[2].DepartureTime.Minutes = 30;
+	flights[2].ArrivalTime.Month = 11;
+	flights[2].ArrivalTime.Day = 20;
+	flights[2].ArrivalTime.Hour = 20;
+	flights[2].ArrivalTime.Minutes = 10;
+
+	flights[3].Name = "ER04";
+	flights[3].StartPoint = "Tomsk";
+	flights[3].EndPoint = "Kiev";
+	flights[3].DepartureTime.Month = 5;
+	flights[3].DepartureTime.Day = 7;
+	flights[3].DepartureTime.Hour = 5;
+	flights[3].DepartureTime.Minutes = 30;
+	flights[3].ArrivalTime.Month = 5;
+	flights[3].ArrivalTime.Day = 7;
+	flights[3].ArrivalTime.Hour = 15;
+	flights[3].ArrivalTime.Minutes = 10;
+
+	flights[4].Name = "T4";
+	flights[4].StartPoint = "Barnaul";
+	flights[4].EndPoint = "Moscow";
+	flights[4].DepartureTime.Month = 3;
+	flights[4].DepartureTime.Day = 22;
+	flights[4].DepartureTime.Hour = 16;
+	flights[4].DepartureTime.Minutes = 30;
+	flights[4].ArrivalTime.Month = 3;
+	flights[4].ArrivalTime.Day = 22;
+	flights[4].ArrivalTime.Hour = 20;
+	flights[4].ArrivalTime.Minutes = 40;
+
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << flights[i].Name << "  "
+			<< flights[i].StartPoint << "-"
+			<< flights[i].EndPoint
+			<< "  Departure: " << flights[i].DepartureTime.Month
+			<< "." << flights[i].DepartureTime.Day << " "
+			<< flights[i].DepartureTime.Hour << ":"
+			<< flights[i].DepartureTime.Minutes
+			<< "  Arrival: " << flights[i].ArrivalTime.Month
+			<< "." << flights[i].ArrivalTime.Day << " "
+			<< flights[i].ArrivalTime.Hour << ":"
+			<< flights[i].ArrivalTime.Minutes;
+		std::cout << std::endl;
+	}
+}
+
+int GetFlightTimeMinutes(Flight& flight)
+{
+	int timeInMinutes = 0;
+
+	const int monthsInYear = 12;
+	const int daysInMonth = 30;
+	const int hoursInDay = 24;
+	const int minutesInHour = 60;
+	int DepartureTimeInMinutes = (flight.DepartureTime.Year * monthsInYear
+		* daysInMonth * hoursInDay * minutesInHour)
+		+ (flight.DepartureTime.Month * daysInMonth
+			* hoursInDay * minutesInHour)
+		+ (flight.DepartureTime.Day * hoursInDay * minutesInHour)
+		+ (flight.DepartureTime.Hour * minutesInHour)
+		+ flight.DepartureTime.Minutes;
+
+	int ArrivalTimeInMinutes = (flight.ArrivalTime.Year * monthsInYear
+		* daysInMonth * hoursInDay * minutesInHour)
+		+ (flight.ArrivalTime.Month * daysInMonth
+			* hoursInDay * minutesInHour)
+		+ (flight.ArrivalTime.Day * hoursInDay * minutesInHour)
+		+ (flight.ArrivalTime.Hour * minutesInHour)
+		+ flight.ArrivalTime.Minutes;
+	
+	timeInMinutes = ArrivalTimeInMinutes - DepartureTimeInMinutes;
+	return timeInMinutes;
+}
+
+void SetName(Flight& flight)
+{
+	std::cout << "Enter flight's name:" << std::endl;
+	std::cin >> flight.Name;
+}
+
+void SetStartPoint(Flight& flight)
+{
+	std::cout << "Enter flight's start point" << std::endl;
+	std::cin >> flight.StartPoint;
+}
+
+void SetEndPoint(Flight& flight)
+{
+	std::cout << "Enter flight's end point" << std::endl;
+	std::cin >> flight.EndPoint;
+}
+
+void SetDepartureTime(Flight& flight)
+{
+	flight.ArrivalTime = *MakeTime();
+}
+
+void SetArrivalTime(Flight& flight)
+{
+	flight.ArrivalTime = *MakeTime();
+	while (!CorrectTimeFlightChecker(flight))
+	{
+		delete &flight.ArrivalTime;
+		std::cout << "Error. Arrival time can't be less? than departure time"
+			<< "Enter again" << std::endl;
+		flight.ArrivalTime = *MakeTime();
+	}
+}
+
+bool CorrectTimeFlightChecker(Flight& flight)
+{
+	const int monthsInYear = 12;
+	const int daysInMonth = 30;
+	const int hoursInDay = 24;
+	const int minutesInHour = 60;
+	int DepartureTimeInMinutes = (flight.DepartureTime.Year * monthsInYear
+									* daysInMonth * hoursInDay * minutesInHour)
+									+ (flight.DepartureTime.Month * daysInMonth
+													* hoursInDay * minutesInHour)
+								+ (flight.DepartureTime.Day * hoursInDay * minutesInHour)
+								+ (flight.DepartureTime.Hour * minutesInHour)
+									+ flight.DepartureTime.Minutes;
+
+	int ArrivalTimeInMinutes = (flight.ArrivalTime.Year * monthsInYear
+		* daysInMonth * hoursInDay * minutesInHour)
+		+ (flight.ArrivalTime.Month * daysInMonth
+			* hoursInDay * minutesInHour)
+		+ (flight.ArrivalTime.Day * hoursInDay * minutesInHour)
+		+ (flight.ArrivalTime.Hour * minutesInHour)
+		+ flight.ArrivalTime.Minutes;
+
+	if (ArrivalTimeInMinutes > DepartureTimeInMinutes)
+	{
+		return true;
+	}
+	return false;
+}
+
 void SetYear(Time& time)
 {
 	time.Year = GetIntValue();
