@@ -30,6 +30,9 @@
     <ClCompile Include="Aggregation.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="AggregationOtM.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StructsWithArrayFields.h">
@@ -42,6 +45,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Aggregation.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="AggregationOtM.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Aggregation.cpp" />
+    <ClCompile Include="AggregationOtM.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aggregation.h" />
+    <ClInclude Include="AggregationOtM.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="StructsWithArrayFields.h" />
