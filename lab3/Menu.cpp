@@ -144,7 +144,6 @@ void AggregationOtMMenu()
 	while (true)
 	{
 		std::cout << "1 - 3.1 (Band)\n"
-			<< "2 - 1.2(route)\n"
 			<< "0 <- back" << std::endl;
 
 		userChoose = GetIntValue();
@@ -153,12 +152,6 @@ void AggregationOtMMenu()
 		case 1:
 		{
 			DemoBand();
-			system("pause");
-			break;
-		}
-		case 2:
-		{
-			DemoRoute();
 			system("pause");
 			break;
 		}
