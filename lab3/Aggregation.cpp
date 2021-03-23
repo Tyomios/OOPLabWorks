@@ -90,6 +90,15 @@ void DemoFlightTime()
 			<< flights[i].ArrivalTime.Minutes;
 		std::cout << std::endl;
 	}
+
+	int timeOfFlight = GetFlightTimeMinutes(flights[2]);
+	
+	std::cout << std::endl;
+	std::cout << flights[2].Name << "  " << flights[2].StartPoint << "-"
+		<< flights[2].EndPoint << " Time of flight: "
+		<< timeOfFlight / 60 << "h " << timeOfFlight % 60 << "min"
+		<< std::endl;
+				
 }
 
 int GetFlightTimeMinutes(Flight& flight)
@@ -100,6 +109,7 @@ int GetFlightTimeMinutes(Flight& flight)
 	const int daysInMonth = 30;
 	const int hoursInDay = 24;
 	const int minutesInHour = 60;
+	
 	int DepartureTimeInMinutes = (flight.DepartureTime.Year * monthsInYear
 		* daysInMonth * hoursInDay * minutesInHour)
 		+ (flight.DepartureTime.Month * daysInMonth
@@ -342,6 +352,7 @@ void DemoRectangleWithPoint()
 	middleX /= 5;
 	middleY /= 5;
 
+	std::cout << std::endl;
 	std::cout << "Xcenter = " << middleX << ";  "
 				<< "Ycenter = " << middleY << std::endl;
 }

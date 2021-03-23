@@ -33,7 +33,7 @@ struct Album
 {
 	std::string Name;
 	int Year;
-	int SongsCount;
+	int SongsCount = 40;
 	Song* Songs = new Song[SongsCount];
 };
 
@@ -52,7 +52,7 @@ struct Band
 {
 	std::string Name;
 	std::string Content;
-	int AlbumsCount;
+	int AlbumsCount = 100;
 	Album* Albums = new Album[AlbumsCount];
 };
 

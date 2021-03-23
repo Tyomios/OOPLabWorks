@@ -1,10 +1,12 @@
 #include "AggregationOtM.h"
 
+
 void SetSongName(Song& song)
 {
 	std::cout << "Enter song's name:" << std::endl;
 	std::cin >> song.Name;
 }
+
 
 void SetCountingInSeconds(Song& song)
 {
@@ -18,6 +20,7 @@ void SetCountingInSeconds(Song& song)
 		song.CountingInSeconds = GetIntValue();
 	}
 }
+
 
 void SetGenre(Song& song)
 {
@@ -69,6 +72,7 @@ void SetGenre(Song& song)
 	}
 }
 
+
 Song* MakeSong()
 {
 	Song* song = new Song;
@@ -79,11 +83,13 @@ Song* MakeSong()
 	return song;
 }
 
+
 void SetAlbumName(Album& album)
 {
 	std::cout << "Enter album's name:" << std::endl;
 	std::cin >> album.Name;
 }
+
 
 void SetYear(Album& album)
 {
@@ -100,6 +106,7 @@ void SetYear(Album& album)
 	}
 }
 
+
 void SetSongsCount(Album& album)
 {
 	std::cout << "Enter number of songs in album:" << std::endl;
@@ -112,6 +119,7 @@ void SetSongsCount(Album& album)
 	}
 }
 
+
 void SetSongs(Album& album)
 {
 	for (int i = 0; i < album.SongsCount; i++)
@@ -119,6 +127,7 @@ void SetSongs(Album& album)
 		album.Songs[i] = *MakeSong();
 	}
 }
+
 
 Album* MakeAlbum()
 {
@@ -131,17 +140,20 @@ Album* MakeAlbum()
 	return album;
 }
 
+
 void SetBandName(Band& band)
 {
 	std::cout << "Enter band's name:" << std::endl;
 	std::cin >> band.Name;
 }
 
+
 void SetContent(Band& band)
 {
 	std::cout << "Write some info about band" << std::endl;
 	std::cin >> band.Content;
 }
+
 
 void SetAlbumsCount(Band& band)
 {
@@ -154,6 +166,7 @@ void SetAlbumsCount(Band& band)
 	}
 }
 
+
 void SetAlbums(Band& band)
 {
 	for (int i = 0; i < band.AlbumsCount; i++)
@@ -163,6 +176,7 @@ void SetAlbums(Band& band)
 		std::cout << std::endl;
 	}
 }
+
 
 Band* MakeBand()
 {
@@ -174,6 +188,7 @@ Band* MakeBand()
 
 	return band;
 }
+
 
 Song* FindSong(std::string songTitle, Band* band)
 {
@@ -190,6 +205,7 @@ Song* FindSong(std::string songTitle, Band* band)
 	return nullptr;
 }
 
+
 Album* FindAlbum(Song* song, Band* band)
 {
 	for (int i = 0; i < band->AlbumsCount; i++)
@@ -204,6 +220,7 @@ Album* FindAlbum(Song* song, Band* band)
 	}
 	return nullptr;
 }
+
 
 Song* GetAllSongs(Band* band, int& allSongsCount)
 {
@@ -224,8 +241,27 @@ Song* GetAllSongs(Band* band, int& allSongsCount)
 	return allSongs;
 }
 
+
 Song* GetAllGenreSongs(Band* band, Genre findingGenre, int& allSongsCount)
 {
+	for (int i = 0; i < band->AlbumsCount; i++)
+	{
+		for (int j = 0; j < band->Albums[i].SongsCount; j++)
+		{
+			if (band->Albums[i].Songs[j].Style == findingGenre)
+			{
+
+				++allSongsCount;
+
+			}
+		}
+	}
+	if (allSongsCount == 0)
+	{
+		return nullptr;
+	}
+	
+	int index = 0;
 	Song* allSongs = new Song[allSongsCount];
 	for (int i = 0; i < band->AlbumsCount; i++)
 	{
@@ -234,12 +270,14 @@ Song* GetAllGenreSongs(Band* band, Genre findingGenre, int& allSongsCount)
 			if(band->Albums[i].Songs[j].Style == findingGenre)
 			{
 
-				allSongs[allSongsCount++] = band->Albums[i].Songs[j];
+				allSongs[index++] = band->Albums[i].Songs[j];
+				
 			}
 		}
 	}
 	return allSongs;
 }
+
 
 void DemoBand()
 {
@@ -284,21 +322,41 @@ void DemoBand()
 	band->Albums[2].Songs[3].Name = "BDC (feat. Someone)";
 	band->Albums[2].Songs[3].Style = Rap;
 
-	std::cout << FindSong("Woodda", band) << std::endl;
-	std::cout << FindAlbum(&band->Albums[2].Songs[2], band) << std::endl;
+	std::cout << "Result of FindSong('Woodda'): "
+				<< FindSong("Woodda", band) << std::endl;
+	std::cout << "Result of FindAlbum (song 2 from 2nd album): "
+			<< FindAlbum(&band->Albums[2].Songs[2], band) << std::endl;
+	
 	int getAllSongs = 0;
-
 	Song* allSongs = GetAllSongs(band, getAllSongs);
+
+	std::cout << "All songs: ";
 	for (int i = 0; i < getAllSongs; i++)
 	{
-		std::cout << allSongs[i].Name << "  ";
+		std::cout << allSongs[i].Name;
+		if (i != (getAllSongs - 1))
+		{
+			std::cout << ",  ";
+		}
 	}
 	std::cout << std::endl;
 
-	for (int i = 0; i < band->AlbumsCount; i++)
+	
+	int popSongsCount = 0;
+	Song* allPopSongs = GetAllGenreSongs(band, Pop, popSongsCount);
+
+	std::cout << "Pop songs: ";
+	for (int i = 0; i < popSongsCount; i++)
 	{
-		delete[] &band->Albums[i];
+		std::cout << allPopSongs[i].Name;
+		if (i != (popSongsCount - 1))
+		{
+			std::cout << ",  ";
+		}
 	}
+	std::cout << std::endl;
+	
 	delete band;
 	delete[] allSongs;
+	delete[] allPopSongs;
 }

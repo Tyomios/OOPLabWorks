@@ -160,4 +160,6 @@ void SetCentre(Rectangle& rectangle);
 /// 
 /// @return Инициализированный обьект
 Rectangle* MakeRectangle();
+
+void DemoRectangleWithPoint();
 #endif
