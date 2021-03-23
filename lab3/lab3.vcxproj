@@ -144,14 +144,22 @@
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="StructsWithArrayFields.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aggregation.h" />
     <ClInclude Include="AggregationOtM.h" />
+    <ClInclude Include="Album.h" />
+    <ClInclude Include="Band.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="Flight.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Song.h" />
     <ClInclude Include="StructsWithArrayFields.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
