@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3ddda6d4-07cb-4c4c-8f15-15ba8702e963}</ProjectGuid>
+    <ProjectGuid>{B109326F-2127-4A7F-B862-22471970707F}</ProjectGuid>
     <RootNamespace>lab3</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -141,25 +141,30 @@
   <ItemGroup>
     <ClCompile Include="Aggregation.cpp" />
     <ClCompile Include="AggregationOtM.cpp" />
+    <ClCompile Include="Album.cpp" />
     <ClCompile Include="Common.cpp" />
+    <ClCompile Include="Flight.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="Song.cpp" />
     <ClCompile Include="StructsWithArrayFields.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Aggregation.h" />
-    <ClInclude Include="AggregationOtM.h" />
-    <ClInclude Include="Album.h" />
-    <ClInclude Include="Band.h" />
-    <ClInclude Include="Common.h" />
-    <ClInclude Include="Flight.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="Point.h" />
-    <ClInclude Include="Rectangle.h" />
-    <ClInclude Include="Song.h" />
-    <ClInclude Include="StructsWithArrayFields.h" />
-    <ClInclude Include="Time.h" />
+    <ClInclude Include="Header files\Aggregation.h" />
+    <ClInclude Include="Header files\AggregationOtM.h" />
+    <ClInclude Include="Header files\Album.h" />
+    <ClInclude Include="Header files\Band.h" />
+    <ClInclude Include="Header files\Common.h" />
+    <ClInclude Include="Header files\Flight.h" />
+    <ClInclude Include="Header files\Menu.h" />
+    <ClInclude Include="Header files\Point.h" />
+    <ClInclude Include="Header files\Rectangle.h" />
+    <ClInclude Include="Header files\Song.h" />
+    <ClInclude Include="Header files\StructsWithArrayFields.h" />
+    <ClInclude Include="Header files\Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

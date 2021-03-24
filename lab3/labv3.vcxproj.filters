@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Aggregation.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="AggregationOtM.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Album.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Common.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Flight.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Song.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="StructsWithArrayFields.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header files\Aggregation.h" />
+    <ClInclude Include="Header files\AggregationOtM.h" />
+    <ClInclude Include="Header files\Album.h" />
+    <ClInclude Include="Header files\Band.h" />
+    <ClInclude Include="Header files\Common.h" />
+    <ClInclude Include="Header files\Flight.h" />
+    <ClInclude Include="Header files\Menu.h" />
+    <ClInclude Include="Header files\Point.h" />
+    <ClInclude Include="Header files\Rectangle.h" />
+    <ClInclude Include="Header files\Song.h" />
+    <ClInclude Include="Header files\StructsWithArrayFields.h" />
+    <ClInclude Include="Header files\Time.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{ffe99538-0293-449b-9b88-1a8331b6ce94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{e5612397-b08d-4bbc-94e3-fc5617575898}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

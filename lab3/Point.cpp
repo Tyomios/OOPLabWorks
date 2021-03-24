@@ -1,4 +1,4 @@
-#include "Point.h"
+#include "Header files\Point.h"
 
 void Point::SetX(double x)
 {
@@ -22,6 +22,12 @@ double Point::GetY()
 
 Point::Point(double x, double y)
 {
-	SetX(x);
-	SetY(y);
+	this->_x = x;
+	this->_y = y;
+}
+
+Point::Point()
+{
+	this->_x = 0.0;
+	this->_y = 0.0;
 }

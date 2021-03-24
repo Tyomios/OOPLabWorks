@@ -3,6 +3,7 @@
 #define _H_RECTANGLE_AAAD3
 #include "Point.h"
 
+#include <exception>
 /// @brief Прямоугольник 
 class Rectangle
 {
@@ -12,7 +13,7 @@ private:
 	/// @brief Ширина
 	int _width;
 	/// @brief Центр прямоугольника
-	Point _centre;
+	Point* _centre;
 public:
 
 	/// @brief Сеттер для атрибута length

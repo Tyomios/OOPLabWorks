@@ -1,4 +1,4 @@
-#include "Time.h"
+#include "Header files\Time.h"
 
 
 void Time::SetYear(int year)
@@ -78,4 +78,13 @@ Time::Time(int year, int month, int day, int hour, int minutes)
 	SetDay(day);
 	SetHour(hour);
 	SetMinutes(minutes);
+}
+
+Time::Time()
+{
+	this->_year = 1900;
+	this->_month = 1;
+	this->_day = 1;
+	this->_hour = 1;
+	this->_minutes = 0;
 }

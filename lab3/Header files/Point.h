@@ -14,6 +14,15 @@ private:
 	double _y;
 public:
 
+	/// @brief Конструктор класса
+	/// 
+	/// @param x Значение для атрибута х
+	/// @param y Значение для атрибута y
+	Point(double x, double y);
+
+	/// @brief Конструктор по умолчанию 
+	Point();
+	
 	/// @brief Сеттер для атрибута x
 	/// 
 	/// @param x Значение 
@@ -33,11 +42,5 @@ public:
 	/// 
 	/// @return Значение атриута
 	double GetY();
-
-	/// @brief Конструктор класса
-	/// 
-	/// @param x Значение для атрибута х
-	/// @param y Значение для атрибута y
-	Point(double x, double y);
 };
 #endif

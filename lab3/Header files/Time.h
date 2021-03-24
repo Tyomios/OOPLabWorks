@@ -23,6 +23,17 @@ private:
 	int _minutes;
 public:
 
+	/// @brief Конструктор класса
+	/// 
+	/// @param year Значение для атрибута Year
+	/// @param month Значение для атрибута Month
+	/// @param day Значение для атрибута Day
+	/// @param hour Значение для атрибута Hour
+	/// @param minutes Значение для атрибута Minutes
+	Time(int year, int month, int day, int hour, int minutes);
+
+	/// @brief Конструктор по умолчанию
+	Time();
 	/// @brief Сеттер для атрибута Year
 	/// 
 	/// @param year Значение 
@@ -72,14 +83,5 @@ public:
 	/// 
 	/// @return Значение Minutes 
 	int GetMinutes();
-
-	/// @brief Конструктор класса
-	/// 
-	/// @param year Значение для атрибута Year
-	/// @param month Значение для атрибута Month
-	/// @param day Значение для атрибута Day
-	/// @param hour Значение для атрибута Hour
-	/// @param minutes Значение для атрибута Minutes
-	Time(int year, int month, int day, int hour, int minutes);
 };
 #endif

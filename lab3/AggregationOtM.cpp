@@ -1,4 +1,4 @@
-#include "AggregationOtM.h"
+#include "Header files\AggregationOtM.h"
 
 
 void SetSongName(Song& song)
@@ -99,7 +99,7 @@ void SetYear(Album& album)
 
 	std::cout << "Enter album's year:" << std::endl;
 	album.Year = GetIntValue();
-	while (album.Year > currentYear || album.Year < 0)
+	while (album.Year > currentYear || album.Year <= 0)
 	{
 		std::cout << "Error. Enter correct year ";
 		album.Year = GetIntValue();
