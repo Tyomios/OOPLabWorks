@@ -18,7 +18,7 @@ private:
 	int _songsCount;
 
 	/// @brief Песни
-	Song* _songs = new Song[_songsCount];
+	Song* _songs = nullptr;
 public:
 
 	/// @brief Конструктор класса
@@ -29,6 +29,9 @@ public:
 	/// @param songs Песни
 	Album(std::string name, int year, int songsCount, Song* songs);
 
+	/// @brief Конструктор по умолчанию
+	Album();
+	
 	/// @brief Сеттер для указания имни альбома
 	/// 
 	/// @param name Значение 
@@ -49,13 +52,20 @@ public:
 	/// @return Значение Year
 	int GetYear();
 
-	
-	void SetSongsCount(int songsCount);
-
+	/// @brief Геттер для получения количества песен
+	/// 
+	/// @return Значение SongsCount
 	int GetSongsCount();
 
-	void SetSongs(Song* songs);
+	/// @brief Сеттер для песен
+	/// 
+	/// @param songs обьект класса Song
+	/// @param songsCount количество песен
+	void SetSongs(Song* songs, int songsCount);
 
+	/// @brief Геттер для получения песен
+	/// 
+	/// @return Указатель на массив
 	Song* GetSongs();
 };
 #endif

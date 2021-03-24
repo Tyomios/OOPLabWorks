@@ -52,6 +52,9 @@ public:
 	/// @param width Значение для ширины
 	/// @param centre Значение для центра
 	Rectangle(int length, int width, Point* centre);
+
+	/// @brief Конструктор по умолчанию
+	Rectangle();
 };
 
 #endif

@@ -37,20 +37,47 @@
     <ClCompile Include="Time.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="Header files\Band.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header files\Aggregation.h" />
-    <ClInclude Include="Header files\AggregationOtM.h" />
-    <ClInclude Include="Header files\Album.h" />
-    <ClInclude Include="Header files\Band.h" />
-    <ClInclude Include="Header files\Common.h" />
-    <ClInclude Include="Header files\Flight.h" />
-    <ClInclude Include="Header files\Menu.h" />
-    <ClInclude Include="Header files\Point.h" />
-    <ClInclude Include="Header files\Rectangle.h" />
-    <ClInclude Include="Header files\Song.h" />
-    <ClInclude Include="Header files\StructsWithArrayFields.h" />
-    <ClInclude Include="Header files\Time.h" />
+    <ClInclude Include="Header files\Aggregation.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\AggregationOtM.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\Album.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\Band.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\Common.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\Flight.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\Menu.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\Point.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\Song.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\Rectangle.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\StructsWithArrayFields.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Header files\Time.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Файлы заголовков">

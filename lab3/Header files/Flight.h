@@ -29,6 +29,7 @@ private:
 	/// @retval false все прочие некорректные случаи
 	/// @return Булево значение
 	bool CorrectTimeFlightChecker();
+
 public:
 
 	/// @brief Сеттер для указания номера рейса
@@ -89,6 +90,11 @@ public:
 	/// @param arrivalTime Время прибытия
 	/// @param departureTime Время отправления
 	Flight(std::string name, std::string startPoint, std::string endPoint,
-		Time* arrivalTime, Time* departureTime);
+		Time* departureTime, Time* arrivalTime);
+
+	/// @brief Конструктор по умолчанию
+	Flight();
+
+	int GetFlightTimeMinutes();
 };
 #endif

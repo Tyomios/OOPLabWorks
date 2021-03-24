@@ -6,6 +6,7 @@ bool Flight::CorrectTimeFlightChecker()
 	const int daysInMonth = 30;
 	const int hoursInDay = 24;
 	const int minutesInHour = 60;
+	
 	int DepartureTimeInMinutes = (this->_departureTime.GetYear() * monthsInYear
 		* daysInMonth * hoursInDay * minutesInHour)
 		+ (this->_departureTime.GetMonth()* daysInMonth
@@ -71,10 +72,10 @@ Time* Flight::GetDepartureTime()
 
 void Flight::SetArrivalTime(Time* arrivalTime)
 {
-	if (!CorrectTimeFlightChecker())
+	if (CorrectTimeFlightChecker())
 	{
 		throw std::exception("Arrival time can't be less or equal"
-														" departure Time");
+							" departure Time");
 	}
 	this->_arrivalTime = *arrivalTime;
 }
@@ -84,11 +85,47 @@ Time* Flight::GetArrivalTime()
 	return &this->_arrivalTime;
 }
 
-Flight::Flight(std::string name, std::string startPoint, std::string endPoint, Time* arrivalTime, Time* departureTime)
+Flight::Flight(std::string name, std::string startPoint, std::string endPoint, Time* departureTime, Time* arrivalTime )
 {
 	SetName(name);
 	SetStartPoint(startPoint);
 	SetEndpoint(endPoint);
 	SetDepartureTime(departureTime);
 	SetArrivalTime(arrivalTime);
+}
+
+Flight::Flight()
+{
+	this->_name = " ";
+	this->_startPoint = " ";
+	this->_endPoint = "  ";
+}
+
+int Flight::GetFlightTimeMinutes()
+{
+	int timeInMinutes = 0;
+
+	const int monthsInYear = 12;
+	const int daysInMonth = 30;
+	const int hoursInDay = 24;
+	const int minutesInHour = 60;
+
+	int DepartureTimeInMinutes = (this->GetDepartureTime()->GetYear() * monthsInYear
+		* daysInMonth * hoursInDay * minutesInHour)
+		+ (this->GetDepartureTime()->GetMonth() * daysInMonth
+			* hoursInDay * minutesInHour)
+		+ (this->GetDepartureTime()->GetDay() * hoursInDay * minutesInHour)
+		+ (this->GetDepartureTime()->GetHour() * minutesInHour)
+		+ this->GetDepartureTime()->GetMinutes();
+
+	int ArrivalTimeInMinutes = (this->GetArrivalTime()->GetYear() * monthsInYear
+		* daysInMonth * hoursInDay * minutesInHour)
+		+ (this->GetArrivalTime()->GetMonth() * daysInMonth
+			* hoursInDay * minutesInHour)
+		+ (this->GetArrivalTime()->GetDay() * hoursInDay * minutesInHour)
+		+ (this->GetArrivalTime()->GetHour() * minutesInHour)
+		+ this->GetArrivalTime()->GetMinutes();
+
+	timeInMinutes = ArrivalTimeInMinutes - DepartureTimeInMinutes;
+	return timeInMinutes;
 }

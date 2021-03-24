@@ -46,3 +46,9 @@ Rectangle::Rectangle(int length, int width, Point* centre)
 	SetWidth(width);
 	SetCentre(centre);
 }
+
+Rectangle::Rectangle()
+{
+	this->_length = 1;
+	this->_width = 1;
+}

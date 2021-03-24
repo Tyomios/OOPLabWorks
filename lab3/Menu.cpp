@@ -96,6 +96,7 @@ void StructsWithArrayFieldsMenu()
 	}
 }
 
+
 void AggregationMenu()
 {
 	int userChoose;
@@ -117,7 +118,7 @@ void AggregationMenu()
 		}
 		case 2:
 		{
-			DemoFlightTime();
+			DemoFlightWithTime();
 			system("pause");
 			break;
 		}
@@ -136,6 +137,7 @@ void AggregationMenu()
 		system("cls");
 	}
 }
+
 
 void AggregationOtMMenu()
 {

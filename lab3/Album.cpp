@@ -5,8 +5,12 @@ Album::Album(std::string name, int year, int songsCount, Song* songs)
 {
 	SetName(name);
 	SetYear(year);
-	SetSongsCount(songsCount);
-	SetSongs(songs);
+	SetSongs(songs, songsCount);
+}
+
+Album::Album()
+{
+	this->_name = " ";
 }
 
 void Album::SetName(std::string name)
@@ -37,23 +41,21 @@ int Album::GetYear()
 	return this->_year;
 }
 
-void Album::SetSongsCount(int songsCount)
-{
-	if (songsCount <= 0)
-	{
-		throw std::exception("Number of songs can't be less or"
-										" equal zero");
-	}
-	this->_songsCount = songsCount;
-}
 
 int Album::GetSongsCount()
 {
 	return this->_songsCount;
 }
 
-void Album::SetSongs(Song* songs)
+void Album::SetSongs(Song* songs, int songsCount)
 {
+	if (songsCount <= 0)
+	{
+		throw std::exception("Number of songs can't be less or"
+			" equal zero");
+	}
+	this->_songsCount = songsCount;
+	
 	this->_songs = songs;
 }
 
