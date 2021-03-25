@@ -1,3 +1,5 @@
+//TODO: Такое сокращение недопустимо. В крайнем случае - AggregationOM.
+//Но в данном случае вообще не нужно сокращать 
 #include "Header files\AggregationOtM.h"
 
 
