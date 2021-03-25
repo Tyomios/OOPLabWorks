@@ -101,32 +101,23 @@ Flight::Flight()
 	this->_endPoint = "  ";
 }
 
-//TODO: Не соответсвует заданию: GetFlightTimeMinutes(Flight& flight)
+//TODO: Не соответсвует заданию: GetFlightTimeMinutes(Flight& flight) +
 int Flight::GetFlightTimeMinutes()
 {
 	int timeInMinutes = 0;
-
-	const int monthsInYear = 12;
-	const int daysInMonth = 30;
-	const int hoursInDay = 24;
 	const int minutesInHour = 60;
 
-	int DepartureTimeInMinutes = (this->GetDepartureTime()->GetYear() * monthsInYear
-		* daysInMonth * hoursInDay * minutesInHour)
-		+ (this->GetDepartureTime()->GetMonth() * daysInMonth
-			* hoursInDay * minutesInHour)
-		+ (this->GetDepartureTime()->GetDay() * hoursInDay * minutesInHour)
-		+ (this->GetDepartureTime()->GetHour() * minutesInHour)
-		+ this->GetDepartureTime()->GetMinutes();
-
-	int ArrivalTimeInMinutes = (this->GetArrivalTime()->GetYear() * monthsInYear
-		* daysInMonth * hoursInDay * minutesInHour)
-		+ (this->GetArrivalTime()->GetMonth() * daysInMonth
-			* hoursInDay * minutesInHour)
-		+ (this->GetArrivalTime()->GetDay() * hoursInDay * minutesInHour)
-		+ (this->GetArrivalTime()->GetHour() * minutesInHour)
-		+ this->GetArrivalTime()->GetMinutes();
-
-	timeInMinutes = ArrivalTimeInMinutes - DepartureTimeInMinutes;
+	timeInMinutes = (this->GetArrivalTime()->GetHour() -
+		this->GetDepartureTime()->GetHour()) * minutesInHour;
+	
+	int differenceInMinutes = this->GetArrivalTime()->GetMinutes()
+							- this->GetDepartureTime()->GetMinutes();
+	if ((differenceInMinutes < 0))
+	{
+		timeInMinutes -= minutesInHour;
+		timeInMinutes += (minutesInHour + differenceInMinutes);
+		return timeInMinutes;
+	}
+	timeInMinutes += differenceInMinutes;
 	return timeInMinutes;
 }

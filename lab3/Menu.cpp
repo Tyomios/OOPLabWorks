@@ -54,7 +54,6 @@ void ResearchWorkMenu()
 	}
 }
 
-
 void StructsWithArrayFieldsMenu()
 {
 	int userChoose;
@@ -96,7 +95,6 @@ void StructsWithArrayFieldsMenu()
 	}
 }
 
-
 void AggregationMenu()
 {
 	int userChoose;
@@ -137,7 +135,6 @@ void AggregationMenu()
 		system("cls");
 	}
 }
-
 
 void AggregationOtMMenu()
 {

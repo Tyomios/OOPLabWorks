@@ -1,7 +1,6 @@
 //TODO: Такое сокращение недопустимо. В крайнем случае - AggregationOM.
-//Но в данном случае вообще не нужно сокращать 
-#include "Header files\AggregationOtM.h"
-
+//Но в данном случае вообще не нужно сокращать +
+#include "Header files\AggregationOneToMany.h"
 
 void DemoBand()
 {
@@ -31,10 +30,10 @@ void DemoBand()
 	
 
 	std::cout << "Result of FindSong('Woodda'): "
-				<< band.FindSong("Woodda") << std::endl;
+				<< band.FindSong("Woodda")->GetSongName() << std::endl;
 	
 	std::cout << "Result of FindAlbum (song 2 from 2nd album): "
-			<< band.FindAlbum(&band.GetAlbums()[2].GetSongs()[2]) << std::endl;
+			<< band.FindAlbum(&band.GetAlbums()[2].GetSongs()[2])->GetName() << std::endl;
 	
 	int getAllSongs = 0;
 	Song* allSongs = band.GetAllSongs(getAllSongs);

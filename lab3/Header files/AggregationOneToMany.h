@@ -1,6 +1,6 @@
 #pragma once
-#ifndef _H_AGGREGATIONOTM_ACAD149
-#define _H_AGGREGATIONOTM_ACAD149
+#ifndef _H_AGGREGATIONONETOMANY_ACAD149
+#define _H_AGGREGATIONONETOMANY_ACAD149
 #include "Common.h"
 #include "Band.h"
 

@@ -22,8 +22,8 @@ struct Route
 	int Number;
 	int ContinuingInMinutes;
 	int Interval;
-	int HaltCount = 10;
-	std::string* Halts = new std::string[HaltCount];
+	int HaltCount;
+	std::string* Halts = nullptr;
 };
 
 /// @brief Работа со структурой Book

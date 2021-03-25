@@ -1,23 +1,25 @@
 #include "Header files\StructsWithArrayFields.h"
-//TODO: Одна строка
-
+//TODO: Одна строка+
 void DemoBook()
 {
 	//TODO: Необходимо разделять код внутри функции на блоки пустыми строчками.
-	//Пустая строка должна быть после циклов, перед выводом на экран и т.д. (разделить по логике)
+	//Пустая строка должна быть после циклов, перед выводом на экран и т.д. (разделить по логике)+
 	Book* books = new Book[3];
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << i + 1 << " book:" << std::endl;
 		ReadBookFromConsole(books[i]);
 	}
+	
 	for (int i = 0; i < 3; i++)
 	{
 		WriteBookToConsole(books[i]);
 	}
+	
 	std::cout << "Enter author's name for search:" << std::endl;
 	std::string searchAuthor;
 	std::cin >> searchAuthor;
+	
 	int foundBook = FindBookByAuthor(books, 3, searchAuthor);
 	if (foundBook == -1 )
 	{
@@ -26,11 +28,11 @@ void DemoBook()
 			<< std::endl;
 		return;
 	}
+	
 	WriteBookToConsole(books[foundBook]);
 	delete[] books;
 }
 //TODO: Между методами - одна пустая строка, RSDN
-
 void ReadBookFromConsole(Book& book)
 {
 	std::cout << "Enter book's name:" << std::endl;
@@ -71,7 +73,6 @@ void ReadBookFromConsole(Book& book)
 	}
 }
 
-
 void WriteBookToConsole(Book& book)
 {
 	for (int i = 0; i < book.AuthorsCount; i++)
@@ -83,7 +84,6 @@ void WriteBookToConsole(Book& book)
 				<< book.PagesCount << " pages"
 				<< std::endl;
 }
-
 
 int FindBookByAuthor(Book* books, int booksCount, std::string author)
 {
@@ -101,7 +101,6 @@ int FindBookByAuthor(Book* books, int booksCount, std::string author)
 	return bookNotFound;
 }
 
-
 void ReadRouteFromConsole(Route& route)
 {
 	std::cout << "Enter route's number: " << std::endl;
@@ -109,20 +108,32 @@ void ReadRouteFromConsole(Route& route)
 
 	std::cout << "Enter route's continuing in minutes: " << std::endl;
 	route.ContinuingInMinutes = GetIntValue();
+	while (route.ContinuingInMinutes <= 0)
+	{
+		std::cout << "Error. Continuing of route can't be less or "
+			<< " equal zero" << std::endl;
+		route.ContinuingInMinutes = GetIntValue();
+	}
 	
 	std::cout << "Enter route's interval: " << std::endl;
 	route.Interval = GetIntValue();
+	while (route.Interval <= 0)
+	{
+		std::cout << "Error. Interval of route can't be less or "
+			<< " equal zero" << std::endl;
+		route.Interval = GetIntValue();
+	}
 	
 	std::cout << "Enter number of halts: " << std::endl;
 	route.HaltCount = GetIntValue();
 
+	route.Halts = new std::string[route.HaltCount];
 	for (int i = 0; i < route.HaltCount; i++)
 	{
 		std::cout << "Enter halt " << i + 1 << ": " << std::endl;
 		std::cin >> route.Halts[i];
 	}
 }
-
 
 void WriteRouteToConsole(Route& route)
 {
@@ -136,7 +147,6 @@ void WriteRouteToConsole(Route& route)
 	}
 	std::cout << std::endl;
 }
-
 
 int FindRouteTo(Route* routes, int routesCount, std::string halt)
 {
@@ -153,8 +163,7 @@ int FindRouteTo(Route* routes, int routesCount, std::string halt)
 	}
 	return indexNotFound;
 }
-
-//TODO: Метод позволяет установить любое кол-во остановок, но при вводе больше 12 программа вылетает
+//TODO: Метод позволяет установить любое кол-во остановок, но при вводе больше 12 программа вылетает+
 void DemoRoute()
 {
 	Route* routes = new Route[3];

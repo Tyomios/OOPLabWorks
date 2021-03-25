@@ -1,7 +1,6 @@
 #include "Header files\Rectangle.h"
 
 
-
 void Rectangle::SetLength(int length)
 {
 	if (length <= 0)

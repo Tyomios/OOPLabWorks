@@ -4,7 +4,7 @@
     <ClCompile Include="Aggregation.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="AggregationOtM.cpp">
+    <ClCompile Include="AggregationOneToMany.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
     <ClCompile Include="Album.cpp">
@@ -45,7 +45,7 @@
     <ClInclude Include="Header files\Aggregation.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Header files\AggregationOtM.h">
+    <ClInclude Include="Header files\AggregationOneToMany.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Header files\Album.h">

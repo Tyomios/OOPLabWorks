@@ -3,7 +3,7 @@
 #define _H_MENU_1234B_
 #include "StructsWithArrayFields.h"
 #include "Aggregation.h"
-#include "AggregationOtM.h"
+#include "AggregationOneToMany.h"
 
 /// @brief Интерфейс для выбора заданий для проверки
 void ResearchWorkMenu();

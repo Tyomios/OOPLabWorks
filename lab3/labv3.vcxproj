@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Aggregation.cpp" />
-    <ClCompile Include="AggregationOtM.cpp" />
+    <ClCompile Include="AggregationOneToMany.cpp" />
     <ClCompile Include="Album.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="Flight.cpp" />
@@ -155,7 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header files\Aggregation.h" />
-    <ClInclude Include="Header files\AggregationOtM.h" />
+    <ClInclude Include="Header files\AggregationOneToMany.h" />
     <ClInclude Include="Header files\Album.h" />
     <ClInclude Include="Header files\Band.h" />
     <ClInclude Include="Header files\Common.h" />

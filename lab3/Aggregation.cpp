@@ -1,6 +1,5 @@
 #include "Header files\Aggregation.h"
 
-
 void DemoFlightWithTime()
 {
 	Time departureTimes[5];
@@ -49,7 +48,6 @@ void DemoFlightWithTime()
 		<< std::endl;
 				
 }
-
 
 void DemoRectangleWithPoint()
 {
