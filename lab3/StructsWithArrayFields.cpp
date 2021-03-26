@@ -1,9 +1,7 @@
 #include "Header files\StructsWithArrayFields.h"
-//TODO: Одна строка+
+
 void DemoBook()
 {
-	//TODO: Необходимо разделять код внутри функции на блоки пустыми строчками.
-	//Пустая строка должна быть после циклов, перед выводом на экран и т.д. (разделить по логике)+
 	Book* books = new Book[3];
 	for (int i = 0; i < 3; i++)
 	{
@@ -32,7 +30,7 @@ void DemoBook()
 	WriteBookToConsole(books[foundBook]);
 	delete[] books;
 }
-//TODO: Между методами - одна пустая строка, RSDN
+
 void ReadBookFromConsole(Book& book)
 {
 	std::cout << "Enter book's name:" << std::endl;
@@ -163,7 +161,7 @@ int FindRouteTo(Route* routes, int routesCount, std::string halt)
 	}
 	return indexNotFound;
 }
-//TODO: Метод позволяет установить любое кол-во остановок, но при вводе больше 12 программа вылетает+
+
 void DemoRoute()
 {
 	Route* routes = new Route[3];
