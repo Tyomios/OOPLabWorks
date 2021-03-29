@@ -12,6 +12,16 @@ private:
 
 	/// @brief координата Y
 	double _y;
+
+	/// @brief Сеттер для атрибута x
+	/// 
+	/// @param x Значение 
+	void SetX(double x);
+
+	/// @brief Сеттер для атрибута y
+	/// 
+	/// @param y Значение  
+	void SetY(double y);
 public:
 
 	/// @brief Конструктор класса
@@ -22,16 +32,6 @@ public:
 
 	/// @brief Конструктор по умолчанию 
 	Point();
-	
-	/// @brief Сеттер для атрибута x
-	/// 
-	/// @param x Значение 
-	void SetX(double x);
-
-	/// @brief Сеттер для атрибута y
-	/// 
-	/// @param y Значение  
-	void SetY(double y);
 
 	/// @brief Геттер для атрибута х
 	/// 
