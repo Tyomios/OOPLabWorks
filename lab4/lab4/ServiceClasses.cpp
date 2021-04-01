@@ -2,7 +2,7 @@
 
 
 
-bool Doublevalidator::IsValuePositive(double value)
+bool DoubleValidator::IsValuePositive(double value)
 {
 	if (value > 0)
 	{
@@ -11,7 +11,7 @@ bool Doublevalidator::IsValuePositive(double value)
 	return false;
 }
 
-bool Doublevalidator::IsValueInRange(double value, double min, double max)
+bool DoubleValidator::IsValueInRange(double value, double min, double max)
 {
 	if (value >= min && value <= max)
 	{
@@ -20,7 +20,7 @@ bool Doublevalidator::IsValueInRange(double value, double min, double max)
 	return false;
 }
 
-void Doublevalidator::AsseptPositiveValue(double value)
+void DoubleValidator::AsseptPositiveValue(double value)
 {
 	if (!IsValuePositive(value))
 	{
@@ -28,7 +28,7 @@ void Doublevalidator::AsseptPositiveValue(double value)
 	}
 }
 
-void Doublevalidator::AsseptValueInRange(double value, double min, double max)
+void DoubleValidator::AsseptValueInRange(double value, double min, double max)
 {
 	if(!IsValueInRange(value, min, max))
 	{

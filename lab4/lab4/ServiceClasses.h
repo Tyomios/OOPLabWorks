@@ -5,7 +5,7 @@
 
 /// @brief Служебный класс для валидации
 /// вещественных значений
-static class Doublevalidator
+static class DoubleValidator
 {
 public:
 

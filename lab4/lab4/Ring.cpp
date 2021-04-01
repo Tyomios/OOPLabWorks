@@ -6,8 +6,8 @@ int Ring::AllRingsCount = 0;
 void Ring::SetRadius(double outerRadius, double innerRadius)
 {
 
-	Doublevalidator::AsseptPositiveValue(outerRadius);
-	Doublevalidator::AsseptPositiveValue(innerRadius);
+	DoubleValidator::AsseptPositiveValue(outerRadius);
+	DoubleValidator::AsseptPositiveValue(innerRadius);
 	
 	if (outerRadius <= innerRadius)
 	{
