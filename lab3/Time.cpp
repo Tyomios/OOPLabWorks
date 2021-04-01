@@ -59,7 +59,7 @@ int Time::GetHour()
 
 void Time::SetMinutes(int minutes)
 {
-	if (minutes < 0 || minutes > 60)
+	if (minutes < 0 || minutes >= 60)
 	{
 		throw std::exception("Error. Repeat entering minutes");
 	}

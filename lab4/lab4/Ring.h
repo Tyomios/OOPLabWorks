@@ -1,7 +1,8 @@
 #pragma once
 #ifndef _H_RING_BEAC23A_
 #define _H_RING_BEAC23A_
-#include "../../lab3/Header files/Point.h"
+#include "Point.h"
+#include "ServiceClasses.h"
 #include <exception>
 
 /// @brief Кольцо
@@ -19,7 +20,7 @@ private:
 	double _innerRadius;
 
 	/// @brief Центр 
-	Point* _center;
+	Point* _center = nullptr;
 
 	/// @brief Проверка значение на положительный знак
 	/// в случае отрицательного значения - выдаст исключение

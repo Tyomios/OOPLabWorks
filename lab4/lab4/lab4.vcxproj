@@ -141,12 +141,16 @@
   <ItemGroup>
     <ClCompile Include="DependentFields.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="Ring.cpp" />
+    <ClCompile Include="ServiceClasses.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DependentFields.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Ring.h" />
+    <ClInclude Include="ServiceClasses.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
