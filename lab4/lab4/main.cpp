@@ -1,11 +1,9 @@
-﻿#include <iostream>
-#include "DependentFields.h"
-#include "Menu.h"
+﻿#include "Menu.h"
+
+#include <iostream>
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
-	//DemoRing();
-	DemoCollision();
+	Menu();
 	return 0;
 }

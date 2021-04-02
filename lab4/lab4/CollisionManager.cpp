@@ -40,4 +40,3 @@ bool CollisionManager::IsCollision(Ring& ring, Ring& secondRing)
 	}
 	return false;
 }
-

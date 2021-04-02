@@ -139,8 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\lab3\Common.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
-    <ClCompile Include="DependentFields.cpp" />
+    <ClCompile Include="GeometricProgram.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Point.cpp" />
@@ -149,8 +150,9 @@
     <ClCompile Include="ServiceClasses.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\lab3\Header files\Common.h" />
     <ClInclude Include="CollisionManager.h" />
-    <ClInclude Include="DependentFields.h" />
+    <ClInclude Include="GeometricProgram.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Rectangle.h" />

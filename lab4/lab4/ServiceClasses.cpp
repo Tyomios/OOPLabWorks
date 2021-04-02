@@ -1,7 +1,5 @@
 #include "ServiceClasses.h"
 
-
-
 bool DoubleValidator::IsValuePositive(double value)
 {
 	if (value > 0)

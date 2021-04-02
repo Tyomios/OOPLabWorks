@@ -4,6 +4,7 @@
 #include "Point.h"
 #include "ServiceClasses.h"
 #include <exception>
+
 /// @brief Прямоугольник 
 class Rectangle
 {

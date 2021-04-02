@@ -1,6 +1,5 @@
 #include "Rectangle.h"
 
-
 void Rectangle::SetLength(int length)
 {
 	DoubleValidator::AsseptPositiveValue(length);
