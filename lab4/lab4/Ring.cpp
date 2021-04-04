@@ -53,7 +53,6 @@ int Ring::GetAllRingsCount()
 
 double Ring::GetArea()
 {
-	//TODO: Математические константы лучше объявлять как минимум на уровне класса+
 	double outerArea = this->PI * this->GetOuterRadius() * this->GetOuterRadius();
 	double innerArea = this->PI * this->GetInnerRadius() * this->GetInnerRadius();
 
