@@ -16,7 +16,7 @@ private:
 	/// @brief Центр прямоугольника
 	Point* _centre;
 public:
-	//TODO: до модификатора доступа отсавить пустую строку
+
 	/// @brief Сеттер для атрибута length
 	/// 
 	/// @param length Значение 

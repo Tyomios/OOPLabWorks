@@ -26,6 +26,7 @@ Point::Point(double x, double y)
 	this->_y = y;
 }
 
+//TODO: Реализовать конструктор без параметров на основе предыдущего конструктора с помощью this
 Point::Point()
 {
 	this->_x = 0.0;

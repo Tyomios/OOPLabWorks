@@ -101,7 +101,6 @@ Flight::Flight()
 	this->_endPoint = "  ";
 }
 
-//TODO: Не соответсвует заданию: GetFlightTimeMinutes(Flight& flight) +
 int Flight::GetFlightTimeMinutes()
 {
 	int timeInMinutes = 0;

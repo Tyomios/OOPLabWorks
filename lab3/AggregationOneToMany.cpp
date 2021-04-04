@@ -1,5 +1,3 @@
-//TODO: Такое сокращение недопустимо. В крайнем случае - AggregationOM.
-//Но в данном случае вообще не нужно сокращать +
 #include "Header files\AggregationOneToMany.h"
 
 void DemoBand()

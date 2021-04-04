@@ -5,6 +5,7 @@
 #include "ServiceClasses.h"
 #include <exception>
 
+//TODO: Заголовочные файлы в отделььную папку
 /// @brief Кольцо
 class Ring
 {
