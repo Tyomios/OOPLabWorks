@@ -41,6 +41,5 @@ Rectangle::Rectangle(int length, int width, Point* centre)
 
 Rectangle::Rectangle()
 {
-	this->_length = 1;
-	this->_width = 1;
+	Rectangle(1, 1, nullptr);
 }

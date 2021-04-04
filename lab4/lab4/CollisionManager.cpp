@@ -1,6 +1,5 @@
 #include "CollisionManager.h"
-
-//TODO: зачем пустая строка?
+//TODO: зачем пустая строка?+
 #include <cmath>
 
 bool CollisionManager::IsCollision(Rectangle& rectangle, Rectangle& secondRectangle)

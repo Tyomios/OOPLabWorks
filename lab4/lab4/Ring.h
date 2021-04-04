@@ -5,12 +5,15 @@
 #include "ServiceClasses.h"
 #include <exception>
 
-//TODO: Заголовочные файлы в отделььную папку
+//TODO: Заголовочные файлы в отдельную папку
 /// @brief Кольцо
 class Ring
 {
 private:
 
+	/// @brief Число Пи
+	const double PI = 3.14;
+	
 	/// @brief Общее число обьектов
 	static int AllRingsCount;
 	
