@@ -6,8 +6,8 @@ void PaidUser::SetPosts(Post* posts, int postsCount)
 	{
 		throw std::exception("Posts count must be more than 0");
 	}
-	_posts = posts;
-	_postsCount = postsCount;
+	this->_posts = posts;
+	this->_postsCount = postsCount;
 }
 
 Post* PaidUser::GetPosts() { return _posts; }

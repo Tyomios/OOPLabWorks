@@ -30,7 +30,11 @@ class User
 	/// @param password пароль
 	void SetPassword(std::string password);
 
-
+	/// @brief Проверка логина на наличие
+	///					специальный символов
+	///					
+	/// @param login Логин
+	void AsseptSymbolsLogin(std::string login);
 
 public:
 

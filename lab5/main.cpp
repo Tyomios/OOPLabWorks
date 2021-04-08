@@ -52,7 +52,7 @@ int main()
 		delete allUsers[i];
 	}
 
-	delete[] allUsers;
+	delete[] allUsers; // 29 строк, было 32 сжатых
 
 	return 0;
 }

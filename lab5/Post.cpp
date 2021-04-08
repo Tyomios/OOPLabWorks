@@ -2,15 +2,16 @@
 
 void Post::SetTitle(std::string title)
 {
-	_title = title;
+	this->_title = title;
 }
 
 void Post::SetText(std::string text)
 {
-	_text = text;
+	this->_text = text;
 }
 
 std::string Post::GetTitle() { return _title; }
+
 std::string Post::GetText() { return _text; }
 
 Post::Post(std::string title, std::string text)
