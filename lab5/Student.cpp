@@ -26,9 +26,8 @@ int Student::GetYear()
 }
 
 Student::Student(std::string name, std::string secondName,
-                 std::string fatherName, int year, int id)
+	std::string fatherName, int year, int id) : Person(name, secondName, fatherName)
 {
-	/*Person(name, secondName, fatherName);*/
 	SetEntranceYear(year);
 	this->_id = id;
 }

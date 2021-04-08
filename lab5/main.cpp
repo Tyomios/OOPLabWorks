@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-void ShowName(Person person);
+void ShowName(Person* person);
 
 int main()
 {
@@ -12,9 +12,10 @@ int main()
 	Student* student = new Student("Dan", "Wolf", "Igorevich", 2019, 244);
 	Teacher* teacher = new Teacher("Lubov", "Smith", "Donova", "PE");
 
-	ShowName(*person);
-	ShowName(*student); // не работает
-	ShowName(*teacher);
+	std::cout << student->GetFatherName() << std::endl;
+	ShowName(person);
+	ShowName(student);
+	ShowName(teacher);
 
 	delete person;
 	delete student;
@@ -23,9 +24,9 @@ int main()
 	return 0;
 }
 
-void ShowName(Person person)
+void ShowName(Person* person)
 {
-	std::cout << person.GetFirstName() << " "
-		<< person.GetSecondName() << " "
-		<< person.GetFatherName() << std::endl;
+	std::cout << person->GetFirstName() << " "
+		<< person->GetSecondName() << " "
+		<< person->GetFatherName() << std::endl;
 }

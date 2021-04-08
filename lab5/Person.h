@@ -33,7 +33,7 @@ private:
 	void SetFartherName(std::string fatherName);
 
 public:
-
+	
 	/// @brief Геттер имени
 	/// 
 	/// @return Имя

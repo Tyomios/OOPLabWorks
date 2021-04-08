@@ -10,8 +10,8 @@ std::string Teacher::GetPosition()
 	return this->_position;
 }
 
-Teacher::Teacher(std::string name, std::string secondName, std::string fatherName, std::string position)
+Teacher::Teacher(std::string name, std::string secondName, 
+		std::string fatherName, std::string position) : Person(name, secondName, fatherName)
 {
-	Person(name, secondName, fatherName);
 	SetPosition(position);
 }
