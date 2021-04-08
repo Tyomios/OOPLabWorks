@@ -30,6 +30,10 @@ class User
 	/// @param password пароль
 	void SetPassword(std::string password);
 
+
+
+public:
+
 	/// @brief Проверка корректности пароля
 	/// 
 	/// @param password Пароль
@@ -38,9 +42,6 @@ class User
 	/// @retval false Пароль неверный
 	/// @return Корректность пароля
 	bool IsCorrectPassword(std::string password);
-
-public:
-
 	/// @brief Геттер номера
 	/// 
 	/// @return Номер пользователя

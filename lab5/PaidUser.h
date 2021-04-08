@@ -37,6 +37,6 @@ public:
 	/// @param password Пароль
 	/// @param posts Посты
 	/// @param postsCount Количество постов
-	PaidUser(int id, std::string login, std::string password, Post* posts, int postsCount);
+	PaidUser(int id, std::string login, std::string password, Post* posts = nullptr, int postsCount = 0);
 };
 #endif
