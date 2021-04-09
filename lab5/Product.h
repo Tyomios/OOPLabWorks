@@ -1,9 +1,8 @@
 #pragma once
 #ifndef _H_PRODUCT_B447
 #define _H_PRODUCT_B447
+#include "CategoryType.h"
 #include <string>
-
-
 
 /// @brief Продукт 
 class Product
