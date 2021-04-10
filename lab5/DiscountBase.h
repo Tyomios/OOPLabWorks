@@ -4,7 +4,7 @@
 #include "CategoryType.h"
 #include "Product.h"
 
-/// @brief 
+/// @brief Скидочная база
 class DiscountBase
 {
 private:

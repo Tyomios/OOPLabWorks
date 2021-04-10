@@ -3,7 +3,7 @@
 #define _H_PERCENTDISCOUNT_AD31
 #include "DiscountBase.h"
 
-/// @brief 
+/// @brief Скидки процентами
 class PercentDiscount : public DiscountBase
 {
 private:

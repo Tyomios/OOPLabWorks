@@ -24,8 +24,8 @@ double PercentDiscount::Calculate(Product* product)
 {
 	if (product->GetCatregory() == GetCategory())
 	{
-		int discount = GetPercent() / 100;
-		double newPrice = product->GetCost() * discount;
+		double discount = product->GetCost() * GetPercent() / 100;
+		double newPrice = product->GetCost() - discount;
 
 		return  newPrice;
 	}
