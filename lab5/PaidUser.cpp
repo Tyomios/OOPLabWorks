@@ -10,10 +10,16 @@ void PaidUser::SetPosts(Post* posts, int postsCount)
 	this->_postsCount = postsCount;
 }
 
-//TODO: Тело класса с новой строки
-Post* PaidUser::GetPosts() { return _posts; }
+//TODO: Тело класса с новой строки+
+Post* PaidUser::GetPosts()
+{
+	return _posts;
+}
 
-int PaidUser::GetPostsCount() { return _postsCount; }
+int PaidUser::GetPostsCount()
+{
+	return _postsCount;
+}
 
 PaidUser::PaidUser(int id, std::string login, std::string password,
 					Post* posts, int postsCount) : User(id, login, password)

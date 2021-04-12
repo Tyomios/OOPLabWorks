@@ -35,12 +35,21 @@ void User::AsseptSymbolsLogin(std::string login)
 	}
 }
 
-//TODO: Тело класса с новой строки
-int User::GetId() { return _id; }
+//TODO: Тело класса с новой строки+
+int User::GetId()
+{
+	return _id;
+}
 
-std::string User::GetLogin() { return _login; }
+std::string User::GetLogin()
+{
+	return _login;
+}
 
-std::string User::GetPassword() { return _password; }
+std::string User::GetPassword()
+{
+	return _password;
+}
 
 User::User(int id, std::string login, std::string password)
 {

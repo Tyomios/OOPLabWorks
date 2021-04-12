@@ -11,7 +11,7 @@ void ShowName(Person* person);
 
 User* Login(User** users, int usersCount, std::string enteredLogin, std::string enteredPassword);
 
-void ShowCheckwithDiscount(DiscountBase* discount, Product* products, int productsCounut);
+void ShowCheckWithDiscount(DiscountBase* discount, Product* products, int productsCounut);
 
 
 int main()
@@ -74,7 +74,7 @@ int main()
 	products[2] = Product("Chicken", 168, Meat);
 	products[3] = Product("Coke", 56, Drink);
 
-	ShowCheckwithDiscount(percentDiscount, products, 4);
+	ShowCheckWithDiscount(percentDiscount, products, 4);
 
 	delete percentDiscount;
 	delete certificateDiscount;
@@ -111,8 +111,8 @@ User* Login(User** users, int usersCount, std::string enteredLogin, std::string 
 	return nullptr;
 }
 
-//TODO: Каждое слово в названии с заглавной буквы
-void ShowCheckwithDiscount(DiscountBase* discount, Product* products, int productsCounut)
+//TODO: Каждое слово в названии с заглавной буквы +
+void ShowCheckWithDiscount(DiscountBase* discount, Product* products, int productsCounut)
 {
 	double fullCost = 0;
 

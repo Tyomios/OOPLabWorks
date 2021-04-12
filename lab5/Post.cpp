@@ -10,10 +10,16 @@ void Post::SetText(std::string text)
 	this->_text = text;
 }
 
-//TODO: Тело класса с новой строки
-std::string Post::GetTitle() { return _title; }
+//TODO: Тело класса с новой строки+
+std::string Post::GetTitle()
+{
+	return _title;
+}
 
-std::string Post::GetText() { return _text; }
+std::string Post::GetText()
+{
+	return _text;
+}
 
 Post::Post(std::string title, std::string text)
 {
