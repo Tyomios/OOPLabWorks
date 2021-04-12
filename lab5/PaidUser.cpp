@@ -10,6 +10,7 @@ void PaidUser::SetPosts(Post* posts, int postsCount)
 	this->_postsCount = postsCount;
 }
 
+//TODO: Тело класса с новой строки
 Post* PaidUser::GetPosts() { return _posts; }
 
 int PaidUser::GetPostsCount() { return _postsCount; }

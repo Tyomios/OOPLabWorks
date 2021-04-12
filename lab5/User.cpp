@@ -35,6 +35,7 @@ void User::AsseptSymbolsLogin(std::string login)
 	}
 }
 
+//TODO: Тело класса с новой строки
 int User::GetId() { return _id; }
 
 std::string User::GetLogin() { return _login; }

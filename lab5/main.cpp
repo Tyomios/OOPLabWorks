@@ -111,7 +111,7 @@ User* Login(User** users, int usersCount, std::string enteredLogin, std::string 
 	return nullptr;
 }
 
-
+//TODO: Каждое слово в названии с заглавной буквы
 void ShowCheckwithDiscount(DiscountBase* discount, Product* products, int productsCounut)
 {
 	double fullCost = 0;
